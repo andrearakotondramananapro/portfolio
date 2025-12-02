@@ -106,7 +106,7 @@ function Projects() {
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-sauge/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-taupe/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

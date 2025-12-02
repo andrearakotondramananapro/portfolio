@@ -54,7 +54,7 @@ function Education() {
       <div className="absolute top-1/4 right-0 w-72 h-72 bg-sauge/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-taupe/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="relative z-10 w-full max-w-6xl 3xl:max-w-7xl 4xl:max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

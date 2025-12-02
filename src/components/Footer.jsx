@@ -38,7 +38,7 @@ function Footer() {
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-bordeaux/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-48 h-48 bg-taupe/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Section principale */}
         <div className="py-12 md:py-16 border-b border-creme/10">
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">

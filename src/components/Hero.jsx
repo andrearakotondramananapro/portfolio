@@ -95,7 +95,7 @@ function Hero() {
 
       {/* Contenu principal */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24"
+        className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16 py-24"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
