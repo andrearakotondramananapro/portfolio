@@ -1,0 +1,35 @@
+{
+  "name": "Andrea Rakotondramanana",
+  "title": {
+    "fr": "Développeur Full-Stack",
+    "en": "Full-Stack Developer",
+    "mg": "Mpamorona Full-Stack"
+  },
+  "email": "andrea.rakotondramanana@email.com",
+  "phone": "+261 34 00 000 00",
+  "location": {
+    "city": "Antananarivo",
+    "country": {
+      "fr": "Madagascar",
+      "en": "Madagascar",
+      "mg": "Madagasikara"
+    }
+  },
+  "photo": "/images/profile.jpg",
+  "resume": "/resume.pdf",
+  "bio": {
+    "fr": "Développeur Full-Stack passionné avec une expertise approfondie dans la création d'applications web modernes. Je combine créativité et expertise technique pour transformer des idées en solutions digitales performantes.",
+    "en": "Passionate Full-Stack Developer with deep expertise in creating modern web applications. I combine creativity and technical expertise to transform ideas into high-performing digital solutions.",
+    "mg": "Mpamorona Full-Stack liana manana fahaizana lalina amin'ny famoronana fampiharana web maoderina. Manambatra famoronana sy fahaizana teknika aho mba hanovana hevitra ho vahaolana nomerika mahomby."
+  },
+  "social": {
+    "github": "https://github.com/andrearakotondramananapro",
+    "linkedin": "https://linkedin.com/in/andrearakotondramanana",
+    "twitter": "https://twitter.com/andrearakoto"
+  },
+  "stats": {
+    "experience": 3,
+    "projects": 25,
+    "technologies": 15
+  }
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "institution": {
+      "fr": "Université d'Antananarivo",
+      "en": "University of Antananarivo",
+      "mg": "Oniversiten'Antananarivo"
+    },
+    "degree": {
+      "fr": "Master en Informatique",
+      "en": "Master's in Computer Science",
+      "mg": "Master amin'ny Informatika"
+    },
+    "field": {
+      "fr": "Génie Logiciel",
+      "en": "Software Engineering",
+      "mg": "Injeniera Logiciel"
+    },
+    "startDate": "2020",
+    "endDate": "2022",
+    "description": {
+      "fr": "Spécialisation en développement d'applications web et mobiles, architecture logicielle et gestion de projets informatiques.",
+      "en": "Specialization in web and mobile application development, software architecture and IT project management.",
+      "mg": "Fitsinjarana amin'ny fampandrosoana fampiharana web sy finday, mari-drefy logiciel ary fitantanana tetikasa informatika."
+    },
+    "icon": "graduation"
+  },
+  {
+    "id": 2,
+    "institution": {
+      "fr": "Université d'Antananarivo",
+      "en": "University of Antananarivo",
+      "mg": "Oniversiten'Antananarivo"
+    },
+    "degree": {
+      "fr": "Licence en Informatique",
+      "en": "Bachelor's in Computer Science",
+      "mg": "Licence amin'ny Informatika"
+    },
+    "field": {
+      "fr": "Informatique Générale",
+      "en": "General Computer Science",
+      "mg": "Informatika Ankapobeny"
+    },
+    "startDate": "2017",
+    "endDate": "2020",
+    "description": {
+      "fr": "Formation approfondie en programmation, algorithmes, bases de données et systèmes d'information.",
+      "en": "In-depth training in programming, algorithms, databases and information systems.",
+      "mg": "Fiofanana lalina amin'ny fandaharana, algorithm, fototra angona ary rafitra fampahalalana."
+    },
+    "icon": "book"
+  },
+  {
+    "id": 3,
+    "institution": {
+      "fr": "Lycée Moderne d'Antananarivo",
+      "en": "Modern High School of Antananarivo",
+      "mg": "Lisea Maoderina Antananarivo"
+    },
+    "degree": {
+      "fr": "Baccalauréat Scientifique",
+      "en": "Scientific Baccalaureate",
+      "mg": "Bakalorea Siansa"
+    },
+    "field": {
+      "fr": "Série C",
+      "en": "Science Series",
+      "mg": "Serie C"
+    },
+    "startDate": "2014",
+    "endDate": "2017",
+    "description": {
+      "fr": "Formation scientifique avec spécialisation en mathématiques et physique.",
+      "en": "Scientific training with specialization in mathematics and physics.",
+      "mg": "Fiofanana ara-tsiansa miaraka amin'ny fitsinjarana amin'ny matematika sy fizika."
+    },
+    "icon": "school"
+  }
+]

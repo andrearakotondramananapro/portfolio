@@ -1,0 +1,272 @@
+{
+  "fr": {
+    "nav": {
+      "about": "À propos",
+      "education": "Formation",
+      "certifications": "Certifications",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "contact": "Contact"
+    },
+    "hero": {
+      "greeting": "Bonjour, je suis",
+      "title": "Développeur Full-Stack",
+      "subtitle": "Je transforme vos idées en applications web performantes et élégantes",
+      "cta": "Voir mes projets",
+      "ctaContact": "Me contacter"
+    },
+    "about": {
+      "title": "À propos de moi",
+      "description": "Passionné par le développement web depuis plusieurs années, je crée des solutions digitales qui allient performance technique et expérience utilisateur exceptionnelle. Mon approche combine créativité et rigueur pour donner vie à vos projets les plus ambitieux.",
+      "values": {
+        "title": "Mes valeurs",
+        "items": ["Innovation", "Qualité", "Collaboration", "Apprentissage continu"]
+      },
+      "downloadCV": "Télécharger mon CV",
+      "stats": {
+        "experience": "Années d'expérience",
+        "projects": "Projets réalisés",
+        "technologies": "Technologies maîtrisées"
+      }
+    },
+    "education": {
+      "title": "Formation",
+      "subtitle": "Mon parcours académique"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "Mes certifications et attestations professionnelles",
+      "viewCredential": "Voir le certificat"
+    },
+    "skills": {
+      "title": "Compétences",
+      "subtitle": "Technologies et outils que je maîtrise",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Bases de données",
+        "tools": "Outils & DevOps"
+      }
+    },
+    "projects": {
+      "title": "Projets",
+      "subtitle": "Découvrez mes réalisations récentes",
+      "filters": {
+        "all": "Tous",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "fullstack": "Full-Stack",
+        "mobile": "Mobile"
+      },
+      "viewProject": "Voir le projet",
+      "viewCode": "Voir le code",
+      "technologies": "Technologies utilisées",
+      "challenges": "Défis relevés",
+      "nextProject": "Projet suivant"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Travaillons ensemble sur votre prochain projet",
+      "form": {
+        "name": "Nom complet",
+        "email": "Adresse email",
+        "subject": "Sujet",
+        "message": "Votre message",
+        "send": "Envoyer le message",
+        "success": "Message envoyé avec succès !",
+        "successDesc": "Je vous répondrai dans les plus brefs délais."
+      },
+      "info": {
+        "email": "Email",
+        "location": "Localisation",
+        "availability": "Disponibilité",
+        "availableNow": "Disponible pour de nouvelles opportunités"
+      },
+      "cta": "Démarrons un projet"
+    },
+    "footer": {
+      "rights": "Tous droits réservés",
+      "madeWith": "Fait avec"
+    }
+  },
+  "en": {
+    "nav": {
+      "about": "About",
+      "education": "Education",
+      "certifications": "Certifications",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "hero": {
+      "greeting": "Hello, I'm",
+      "title": "Full-Stack Developer",
+      "subtitle": "I transform your ideas into high-performing and elegant web applications",
+      "cta": "View my projects",
+      "ctaContact": "Contact me"
+    },
+    "about": {
+      "title": "About me",
+      "description": "Passionate about web development for several years, I create digital solutions that combine technical performance and exceptional user experience. My approach combines creativity and rigor to bring your most ambitious projects to life.",
+      "values": {
+        "title": "My values",
+        "items": ["Innovation", "Quality", "Collaboration", "Continuous learning"]
+      },
+      "downloadCV": "Download my CV",
+      "stats": {
+        "experience": "Years of experience",
+        "projects": "Completed projects",
+        "technologies": "Mastered technologies"
+      }
+    },
+    "education": {
+      "title": "Education",
+      "subtitle": "My academic journey"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "subtitle": "My professional certifications and credentials",
+      "viewCredential": "View credential"
+    },
+    "skills": {
+      "title": "Skills",
+      "subtitle": "Technologies and tools I master",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Databases",
+        "tools": "Tools & DevOps"
+      }
+    },
+    "projects": {
+      "title": "Projects",
+      "subtitle": "Discover my recent work",
+      "filters": {
+        "all": "All",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "fullstack": "Full-Stack",
+        "mobile": "Mobile"
+      },
+      "viewProject": "View project",
+      "viewCode": "View code",
+      "technologies": "Technologies used",
+      "challenges": "Challenges overcome",
+      "nextProject": "Next project"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Let's work together on your next project",
+      "form": {
+        "name": "Full name",
+        "email": "Email address",
+        "subject": "Subject",
+        "message": "Your message",
+        "send": "Send message",
+        "success": "Message sent successfully!",
+        "successDesc": "I will get back to you as soon as possible."
+      },
+      "info": {
+        "email": "Email",
+        "location": "Location",
+        "availability": "Availability",
+        "availableNow": "Available for new opportunities"
+      },
+      "cta": "Start a project"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "madeWith": "Made with"
+    }
+  },
+  "mg": {
+    "nav": {
+      "about": "Momba ahy",
+      "education": "Fianarana",
+      "certifications": "Fanamarinana",
+      "skills": "Fahaizana",
+      "projects": "Tetikasa",
+      "contact": "Fifandraisana"
+    },
+    "hero": {
+      "greeting": "Miarahaba, izaho dia",
+      "title": "Mpamorona Full-Stack",
+      "subtitle": "Manova ny hevitrao ho fampiharana web mahomby sy kanto",
+      "cta": "Jereo ny tetikasako",
+      "ctaContact": "Mifandraisa amiko"
+    },
+    "about": {
+      "title": "Momba ahy",
+      "description": "Liana amin'ny fampandrosoana tranonkala nandritra ny taona maro, mamorona vahaolana nomerika izay manambatra ny fahombiazan'ny teknika sy ny traikefan'ny mpampiasa miavaka aho. Ny fomba fiasako dia manambatra ny famoronana sy ny hentitra mba hamelomana ireo tetikasa be hambom-po indrindra.",
+      "values": {
+        "title": "Ny soatoaviko",
+        "items": ["Fanavaozana", "Kalitao", "Fiaraha-miasa", "Fianarana tsy tapaka"]
+      },
+      "downloadCV": "Misintona ny CV",
+      "stats": {
+        "experience": "Taona niasana",
+        "projects": "Tetikasa vita",
+        "technologies": "Teknolojia voafehy"
+      }
+    },
+    "education": {
+      "title": "Fianarana",
+      "subtitle": "Ny lalako ara-pianarana"
+    },
+    "certifications": {
+      "title": "Fanamarinana",
+      "subtitle": "Ireo fanamarinana sy fahazoan-dàlana matihanina",
+      "viewCredential": "Jereo ny fanamarinana"
+    },
+    "skills": {
+      "title": "Fahaizana",
+      "subtitle": "Teknolojia sy fitaovana voafehiko",
+      "categories": {
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "database": "Fototra angona",
+        "tools": "Fitaovana & DevOps"
+      }
+    },
+    "projects": {
+      "title": "Tetikasa",
+      "subtitle": "Jereo ireo asako vao haingana",
+      "filters": {
+        "all": "Rehetra",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "fullstack": "Full-Stack",
+        "mobile": "Finday"
+      },
+      "viewProject": "Jereo ny tetikasa",
+      "viewCode": "Jereo ny kaody",
+      "technologies": "Teknolojia nampiasaina",
+      "challenges": "Fanamby noresena",
+      "nextProject": "Tetikasa manaraka"
+    },
+    "contact": {
+      "title": "Fifandraisana",
+      "subtitle": "Andao hiara-hiasa amin'ny tetikasanao manaraka",
+      "form": {
+        "name": "Anarana feno",
+        "email": "Adiresy mailaka",
+        "subject": "Lohahevitra",
+        "message": "Ny hafatrao",
+        "send": "Alefaso ny hafatra",
+        "success": "Hafatra nalefa soa aman-tsara!",
+        "successDesc": "Hamaly anao haingana araka izay azo atao aho."
+      },
+      "info": {
+        "email": "Mailaka",
+        "location": "Toerana",
+        "availability": "Fahafahana",
+        "availableNow": "Afaka mandray fahafahana vaovao"
+      },
+      "cta": "Manomboha tetikasa"
+    },
+    "footer": {
+      "rights": "Zo rehetra voatana",
+      "madeWith": "Natao tamin'ny"
+    }
+  }
+}

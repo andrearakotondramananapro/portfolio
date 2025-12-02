@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "fr": "Développeur React Certifié",
+      "en": "Certified React Developer",
+      "mg": "Mpamorona React voamarina"
+    },
+    "issuer": "Meta",
+    "date": "2023",
+    "credentialUrl": "https://coursera.org/verify/professional-cert/",
+    "image": "/images/certifications/meta-react.png",
+    "category": "frontend"
+  },
+  {
+    "id": 2,
+    "name": {
+      "fr": "AWS Cloud Practitioner",
+      "en": "AWS Cloud Practitioner",
+      "mg": "AWS Cloud Practitioner"
+    },
+    "issuer": "Amazon Web Services",
+    "date": "2023",
+    "credentialUrl": "https://aws.amazon.com/verification/",
+    "image": "/images/certifications/aws-cp.png",
+    "category": "devops"
+  },
+  {
+    "id": 3,
+    "name": {
+      "fr": "Développeur Full-Stack JavaScript",
+      "en": "Full-Stack JavaScript Developer",
+      "mg": "Mpamorona Full-Stack JavaScript"
+    },
+    "issuer": "freeCodeCamp",
+    "date": "2022",
+    "credentialUrl": "https://freecodecamp.org/certification/",
+    "image": "/images/certifications/fcc-fullstack.png",
+    "category": "fullstack"
+  },
+  {
+    "id": 4,
+    "name": {
+      "fr": "MongoDB pour Développeurs",
+      "en": "MongoDB for Developers",
+      "mg": "MongoDB ho an'ny Mpamorona"
+    },
+    "issuer": "MongoDB University",
+    "date": "2022",
+    "credentialUrl": "https://university.mongodb.com/certification/",
+    "image": "/images/certifications/mongodb.png",
+    "category": "database"
+  },
+  {
+    "id": 5,
+    "name": {
+      "fr": "Node.js Avancé",
+      "en": "Advanced Node.js",
+      "mg": "Node.js avo lenta"
+    },
+    "issuer": "Udemy",
+    "date": "2021",
+    "credentialUrl": "https://udemy.com/certificate/",
+    "image": "/images/certifications/nodejs.png",
+    "category": "backend"
+  },
+  {
+    "id": 6,
+    "name": {
+      "fr": "Python pour la Data Science",
+      "en": "Python for Data Science",
+      "mg": "Python ho an'ny Data Science"
+    },
+    "issuer": "DataCamp",
+    "date": "2021",
+    "credentialUrl": "https://datacamp.com/certificate/",
+    "image": "/images/certifications/python-ds.png",
+    "category": "backend"
+  }
+]

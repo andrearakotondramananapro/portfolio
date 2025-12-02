@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+/* Configuration Tailwind v4 avec thème personnalisé */
+@theme {
+  /* Couleurs personnalisées */
+  --color-charbon: #322d29;
+  --color-bordeaux: #72383d;
+  --color-taupe: #ac9c8d;
+  --color-beige: #d1c7bd;
+  --color-gris: #d9d9d9;
+  --color-creme: #efe9e1;
+
+  /* Polices */
+  --font-sans: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* Ombres personnalisées */
+  --shadow-glass: 0 8px 32px 0 rgba(50, 45, 41, 0.1);
+  --shadow-glass-lg: 0 8px 32px 0 rgba(50, 45, 41, 0.2);
+  --shadow-glow: 0 0 20px rgba(114, 56, 61, 0.3);
+  --shadow-glow-lg: 0 0 40px rgba(114, 56, 61, 0.4);
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* Variables CSS pour compatibilité */
+:root {
+  --charbon: #322d29;
+  --bordeaux: #72383d;
+  --taupe: #ac9c8d;
+  --beige: #d1c7bd;
+  --gris: #d9d9d9;
+  --creme: #efe9e1;
+}
+
+/* Styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--charbon);
+  background-color: var(--creme);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sélection de texte personnalisée */
+::selection {
+  background-color: var(--bordeaux);
+  color: var(--creme);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--taupe);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bordeaux);
+}
+
+/* Focus visible pour l'accessibilité */
+*:focus-visible {
+  outline: 2px solid var(--bordeaux);
+  outline-offset: 2px;
+}
+
+/* Classes utilitaires personnalisées */
+.glass {
+  background: rgba(239, 233, 225, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 217, 217, 0.3);
+}
+
+.glass-dark {
+  background: rgba(50, 45, 41, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(172, 156, 141, 0.2);
+}
+
+/* Effet de brillance au hover */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.shine:hover::before {
+  left: 100%;
+}
+
+/* Underline animé */
+.animated-underline {
+  position: relative;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bordeaux);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.animated-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Effet de lift au hover */
+.lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(50, 45, 41, 0.15);
+}
+
+/* Gradient animé */
+.animated-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--creme),
+    var(--beige),
+    var(--taupe),
+    var(--bordeaux)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation de chargement */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--beige);
+  border-top-color: var(--bordeaux);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}

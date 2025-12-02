@@ -1,0 +1,201 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "fr": "E-Commerce Platform",
+      "en": "E-Commerce Platform",
+      "mg": "Sehatra E-Commerce"
+    },
+    "description": {
+      "fr": "Plateforme e-commerce complète avec panier, paiement et gestion des commandes",
+      "en": "Complete e-commerce platform with cart, payment and order management",
+      "mg": "Sehatra e-commerce feno miaraka amin'ny sariety, fandoavana ary fitantanana baiko"
+    },
+    "longDescription": {
+      "fr": "Une plateforme e-commerce moderne développée avec React et Node.js. Elle comprend un système d'authentification complet, un panier d'achat persistant, l'intégration de Stripe pour les paiements, un dashboard administrateur et un système de gestion des stocks en temps réel.",
+      "en": "A modern e-commerce platform developed with React and Node.js. It includes a complete authentication system, persistent shopping cart, Stripe integration for payments, admin dashboard and real-time inventory management system.",
+      "mg": "Sehatra e-commerce maoderina novolavolaina tamin'ny React sy Node.js. Ahitana rafitra fanamarinana feno, sariety fividianana maharitra, fampidirana Stripe ho an'ny fandoavana, dashboard mpitantana ary rafitra fitantanana entana amin'ny fotoana tena izy."
+    },
+    "image": "/images/projects/ecommerce.jpg",
+    "images": [
+      "/images/projects/ecommerce-1.jpg",
+      "/images/projects/ecommerce-2.jpg",
+      "/images/projects/ecommerce-3.jpg"
+    ],
+    "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Redux", "Tailwind CSS"],
+    "category": "fullstack",
+    "liveUrl": "https://ecommerce-demo.vercel.app",
+    "githubUrl": "https://github.com/andrearakotondramananapro/ecommerce",
+    "featured": true,
+    "challenges": {
+      "fr": ["Intégration de paiement sécurisé", "Gestion d'état complexe", "Optimisation des performances"],
+      "en": ["Secure payment integration", "Complex state management", "Performance optimization"],
+      "mg": ["Fampidirana fandoavana voaaro", "Fitantanana fanjakana sarotra", "Fanatsarana fahombiazana"]
+    }
+  },
+  {
+    "id": 2,
+    "title": {
+      "fr": "Application de Gestion de Tâches",
+      "en": "Task Management Application",
+      "mg": "Fampiharana Fitantanana Asa"
+    },
+    "description": {
+      "fr": "Application collaborative de gestion de projets avec tableaux Kanban",
+      "en": "Collaborative project management app with Kanban boards",
+      "mg": "Fampiharana fitantanana tetikasa fiaraha-miasa miaraka amin'ny tabilao Kanban"
+    },
+    "longDescription": {
+      "fr": "Une application de gestion de tâches inspirée de Trello, permettant aux équipes de collaborer efficacement. Fonctionnalités incluses : tableaux Kanban avec drag-and-drop, assignation de tâches, notifications en temps réel et intégration calendrier.",
+      "en": "A Trello-inspired task management application, enabling teams to collaborate effectively. Features include: Kanban boards with drag-and-drop, task assignment, real-time notifications and calendar integration.",
+      "mg": "Fampiharana fitantanana asa nentanin'i Trello, ahafahan'ny ekipa miara-miasa tsara. Ny endri-javatra dia misy: tabilao Kanban miaraka amin'ny drag-and-drop, fanendrena asa, fampahafantarana amin'ny fotoana tena izy ary fampidirana kalandrie."
+    },
+    "image": "/images/projects/taskmanager.jpg",
+    "images": [
+      "/images/projects/taskmanager-1.jpg",
+      "/images/projects/taskmanager-2.jpg"
+    ],
+    "technologies": ["Vue.js", "Firebase", "Vuex", "Tailwind CSS"],
+    "category": "frontend",
+    "liveUrl": "https://taskmanager-demo.vercel.app",
+    "githubUrl": "https://github.com/andrearakotondramananapro/taskmanager",
+    "featured": true,
+    "challenges": {
+      "fr": ["Synchronisation temps réel", "Système drag-and-drop fluide", "Gestion des permissions"],
+      "en": ["Real-time synchronization", "Smooth drag-and-drop system", "Permission management"],
+      "mg": ["Fampifanarahana amin'ny fotoana tena izy", "Rafitra drag-and-drop malefaka", "Fitantanana fahazoan-dalana"]
+    }
+  },
+  {
+    "id": 3,
+    "title": {
+      "fr": "API RESTful Bancaire",
+      "en": "Banking RESTful API",
+      "mg": "API RESTful Banky"
+    },
+    "description": {
+      "fr": "API sécurisée pour opérations bancaires avec authentification JWT",
+      "en": "Secure API for banking operations with JWT authentication",
+      "mg": "API voaaro ho an'ny asa banky miaraka amin'ny fanamarinana JWT"
+    },
+    "longDescription": {
+      "fr": "Une API RESTful robuste pour les opérations bancaires. Comprend l'authentification JWT, le chiffrement des données sensibles, la gestion des transactions, les rapports financiers et une documentation Swagger complète.",
+      "en": "A robust RESTful API for banking operations. Includes JWT authentication, encryption of sensitive data, transaction management, financial reports and comprehensive Swagger documentation.",
+      "mg": "API RESTful matanjaka ho an'ny asa banky. Ahitana fanamarinana JWT, fanafintohinana angona saro-pady, fitantanana fifanakalozana, tatitra ara-bola ary tahirin-kevitra Swagger feno."
+    },
+    "image": "/images/projects/bankapi.jpg",
+    "images": [
+      "/images/projects/bankapi-1.jpg",
+      "/images/projects/bankapi-2.jpg"
+    ],
+    "technologies": ["Node.js", "Express", "PostgreSQL", "JWT", "Swagger"],
+    "category": "backend",
+    "liveUrl": "https://bankapi-docs.vercel.app",
+    "githubUrl": "https://github.com/andrearakotondramananapro/bank-api",
+    "featured": false,
+    "challenges": {
+      "fr": ["Sécurité des transactions", "Conformité réglementaire", "Haute disponibilité"],
+      "en": ["Transaction security", "Regulatory compliance", "High availability"],
+      "mg": ["Fiarovana fifanakalozana", "Fanajana lalàna", "Fahafahana avo"]
+    }
+  },
+  {
+    "id": 4,
+    "title": {
+      "fr": "Application Mobile Fitness",
+      "en": "Fitness Mobile Application",
+      "mg": "Fampiharana Finday Fitness"
+    },
+    "description": {
+      "fr": "Application de suivi fitness avec programmes d'entraînement personnalisés",
+      "en": "Fitness tracking app with personalized workout programs",
+      "mg": "Fampiharana fanaraha-maso fitness miaraka amin'ny programa fanazaran-tena manokana"
+    },
+    "longDescription": {
+      "fr": "Application mobile cross-platform pour le suivi fitness. Fonctionnalités : programmes d'entraînement personnalisés, suivi des calories et nutrition, intégration avec wearables, tableaux de progression et communauté sociale.",
+      "en": "Cross-platform mobile app for fitness tracking. Features: personalized workout programs, calorie and nutrition tracking, wearables integration, progress charts and social community.",
+      "mg": "Fampiharana finday cross-platform ho an'ny fanaraha-maso fitness. Endri-javatra: programa fanazaran-tena manokana, fanaraha-maso kaloria sy sakafo, fampidirana wearables, tabilaon'ny fandrosoana ary vondron'olona sosialy."
+    },
+    "image": "/images/projects/fitness.jpg",
+    "images": [
+      "/images/projects/fitness-1.jpg",
+      "/images/projects/fitness-2.jpg"
+    ],
+    "technologies": ["React Native", "Firebase", "Redux", "Node.js"],
+    "category": "mobile",
+    "liveUrl": "https://fitness-app.expo.dev",
+    "githubUrl": "https://github.com/andrearakotondramananapro/fitness-app",
+    "featured": true,
+    "challenges": {
+      "fr": ["Performance cross-platform", "Synchronisation offline", "Intégration capteurs"],
+      "en": ["Cross-platform performance", "Offline synchronization", "Sensor integration"],
+      "mg": ["Fahombiazana cross-platform", "Fampifanarahana offline", "Fampidirana sensor"]
+    }
+  },
+  {
+    "id": 5,
+    "title": {
+      "fr": "Dashboard Analytics",
+      "en": "Analytics Dashboard",
+      "mg": "Dashboard Analytika"
+    },
+    "description": {
+      "fr": "Tableau de bord interactif pour visualisation de données business",
+      "en": "Interactive dashboard for business data visualization",
+      "mg": "Tabilao fifandraisana ho an'ny fanehoana angona orinasa"
+    },
+    "longDescription": {
+      "fr": "Dashboard analytics complet avec visualisations interactives. Inclut des graphiques dynamiques, des rapports exportables, des filtres avancés et une mise à jour en temps réel des métriques business.",
+      "en": "Complete analytics dashboard with interactive visualizations. Includes dynamic charts, exportable reports, advanced filters and real-time business metrics updates.",
+      "mg": "Dashboard analytika feno miaraka amin'ny fanehoana mifandray. Misy grafika dinamika, tatitra azo avoaka, sivana mandroso ary fanavaozana metrika orinasa amin'ny fotoana tena izy."
+    },
+    "image": "/images/projects/dashboard.jpg",
+    "images": [
+      "/images/projects/dashboard-1.jpg",
+      "/images/projects/dashboard-2.jpg"
+    ],
+    "technologies": ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"],
+    "category": "fullstack",
+    "liveUrl": "https://analytics-demo.vercel.app",
+    "githubUrl": "https://github.com/andrearakotondramananapro/analytics-dashboard",
+    "featured": false,
+    "challenges": {
+      "fr": ["Visualisations complexes", "Performance avec gros volumes", "UX intuitive"],
+      "en": ["Complex visualizations", "Performance with large volumes", "Intuitive UX"],
+      "mg": ["Fanehoana sarotra", "Fahombiazana amin'ny haben-javatra be", "UX mora azo"]
+    }
+  },
+  {
+    "id": 6,
+    "title": {
+      "fr": "Blog Personnel",
+      "en": "Personal Blog",
+      "mg": "Blog Manokana"
+    },
+    "description": {
+      "fr": "Blog moderne avec CMS headless et rendu statique optimisé",
+      "en": "Modern blog with headless CMS and optimized static rendering",
+      "mg": "Blog maoderina miaraka amin'ny CMS headless sy fanehoana statika voatsara"
+    },
+    "longDescription": {
+      "fr": "Blog personnel performant avec Next.js et Sanity CMS. Fonctionnalités : génération statique, système de commentaires, newsletter, mode sombre et SEO optimisé pour un score Lighthouse de 100.",
+      "en": "High-performance personal blog with Next.js and Sanity CMS. Features: static generation, comment system, newsletter, dark mode and SEO optimized for a Lighthouse score of 100.",
+      "mg": "Blog manokana mahomby miaraka amin'ny Next.js sy Sanity CMS. Endri-javatra: famoronana statika, rafitra fanehoan-kevitra, newsletter, maody maizina ary SEO voatsara ho an'ny isa Lighthouse 100."
+    },
+    "image": "/images/projects/blog.jpg",
+    "images": [
+      "/images/projects/blog-1.jpg",
+      "/images/projects/blog-2.jpg"
+    ],
+    "technologies": ["Next.js", "Sanity CMS", "Tailwind CSS", "Vercel"],
+    "category": "frontend",
+    "liveUrl": "https://myblog-demo.vercel.app",
+    "githubUrl": "https://github.com/andrearakotondramananapro/personal-blog",
+    "featured": false,
+    "challenges": {
+      "fr": ["SEO technique avancé", "Performance optimale", "Expérience de lecture"],
+      "en": ["Advanced technical SEO", "Optimal performance", "Reading experience"],
+      "mg": ["SEO teknika mandroso", "Fahombiazana tsara indrindra", "Traikefan'ny famakiana"]
+    }
+  }
+]
