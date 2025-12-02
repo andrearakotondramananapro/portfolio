@@ -1,29 +1,25 @@
-import { motion } from 'framer-motion';
 import { Heart, Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
 import { useLanguage } from '../hooks/useLanguage';
 import profile from '../data/profile.json';
 
 /**
  * Composant Footer
- * Pied de page avec liens sociaux et bouton retour en haut
+ * Sans Framer Motion - CSS uniquement
  */
 function Footer() {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
-  // Scroll vers le haut
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Réseaux sociaux
   const socialLinks = [
     { icon: Github, href: profile.social.github, label: 'GitHub' },
     { icon: Linkedin, href: profile.social.linkedin, label: 'LinkedIn' },
     { icon: Twitter, href: profile.social.twitter, label: 'Twitter' },
   ];
 
-  // Liens de navigation
   const navLinks = [
     { href: '#about', label: t('nav.about') },
     { href: '#education', label: t('nav.education') },
@@ -44,13 +40,12 @@ function Footer() {
           <div className="grid md:grid-cols-3 gap-8 md:gap-12">
             {/* Colonne 1 - Logo et description */}
             <div className="space-y-4">
-              <motion.a
+              <a
                 href="#"
-                className="inline-block text-2xl font-bold text-creme hover:text-bordeaux transition-colors"
-                whileHover={{ scale: 1.05 }}
+                className="inline-block text-2xl font-bold text-creme hover:text-bordeaux hover:scale-105 transition-all duration-200"
               >
                 Portfolio
-              </motion.a>
+              </a>
               <p className="text-creme/60 text-sm leading-relaxed">
                 {t('hero.subtitle')}
               </p>
@@ -64,13 +59,12 @@ function Footer() {
               <ul className="space-y-2">
                 {navLinks.map((link, index) => (
                   <li key={index}>
-                    <motion.a
+                    <a
                       href={link.href}
-                      className="text-creme/60 hover:text-creme transition-colors text-sm"
-                      whileHover={{ x: 4 }}
+                      className="text-creme/60 hover:text-creme hover:translate-x-1 transition-all duration-200 text-sm inline-block"
                     >
                       {link.label}
-                    </motion.a>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -83,18 +77,16 @@ function Footer() {
               </h4>
               <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
-                  <motion.a
+                  <a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-creme/10 rounded-lg text-creme/60 hover:text-creme hover:bg-creme/20 transition-all"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="p-2 bg-creme/10 rounded-lg text-creme/60 hover:text-creme hover:bg-creme/20 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
                     aria-label={social.label}
                   >
                     <social.icon size={20} />
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>
@@ -116,7 +108,7 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bouton retour en haut - transition CSS */}
+      {/* Bouton retour en haut */}
       <button
         onClick={scrollToTop}
         className="fixed bottom-6 right-6 p-3 bg-bordeaux text-creme rounded-full shadow-glow hover:shadow-glow-lg hover:scale-110 active:scale-95 transition-all duration-200 z-40"
@@ -124,18 +116,6 @@ function Footer() {
       >
         <ArrowUp size={20} />
       </button>
-
-      {/* Easter egg dans la console */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            console.log('%c👋 Salut développeur curieux !', 'font-size: 24px; font-weight: bold; color: #72383d;');
-            console.log('%cTu as trouvé mon easter egg ! 🎉', 'font-size: 16px; color: #322d29;');
-            console.log('%cN\\'hésite pas à me contacter si tu veux discuter tech !', 'font-size: 14px; color: #ac9c8d;');
-            console.log('%c📧 ${profile.email}', 'font-size: 14px; color: #72383d;');
-          `,
-        }}
-      />
     </footer>
   );
 }

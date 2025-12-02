@@ -15,13 +15,11 @@ import './index.css';
 
 /**
  * Composant principal de l'application
- * Portfolio moderne avec transitions CSS pures
+ * Le contenu est toujours rendu, le loader fait un fade out par dessus
  */
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [showContent, setShowContent] = useState(false);
 
-  // Gestion du chargement initial
   useEffect(() => {
     if (isLoading) {
       document.body.style.overflow = 'hidden';
@@ -30,52 +28,27 @@ function App() {
     }
   }, [isLoading]);
 
-  const handleLoadingComplete = () => {
-    setIsLoading(false);
-    // Petit délai pour laisser le loader disparaître
-    setTimeout(() => {
-      setShowContent(true);
-    }, 50);
-  };
-
   return (
     <LanguageProvider>
-      {/* Loader initial */}
-      {isLoading && <Loader onLoadingComplete={handleLoadingComplete} />}
+      {/* Contenu principal - toujours rendu */}
+      <div className="min-h-screen bg-creme font-sans antialiased relative">
+        <AnimatedBackground />
+        <Navigation />
+        <main className="relative z-10 mx-auto">
+          <Hero />
+          <About />
+          <Education />
+          <Certifications />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
 
-      {/* Contenu principal - transitions CSS pures */}
-      {!isLoading && (
-        <div
-          className={`min-h-screen bg-creme font-sans antialiased relative transition-opacity duration-700 ease-out ${
-            showContent ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          {/* Fond animé */}
-          <AnimatedBackground />
-
-          {/* Navigation fixe */}
-          <div
-            className={`transition-all duration-700 ease-out delay-100 ${
-              showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
-            }`}
-          >
-            <Navigation />
-          </div>
-
-          {/* Contenu principal */}
-          <main className="relative z-10 mx-auto">
-            <Hero />
-            <About />
-            <Education />
-            <Certifications />
-            <Skills />
-            <Projects />
-            <Contact />
-          </main>
-
-          {/* Pied de page */}
-          <Footer />
-        </div>
+      {/* Loader par dessus - fait un fade out */}
+      {isLoading && (
+        <Loader onLoadingComplete={() => setIsLoading(false)} />
       )}
     </LanguageProvider>
   );
