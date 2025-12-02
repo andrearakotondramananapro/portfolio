@@ -42,6 +42,9 @@ public/
 **Color Palette:**
 - `#322d29` - Deep charcoal (backgrounds, text)
 - `#72383d` - Sophisticated bordeaux (accents, CTAs)
+- `#5B7B5B` - Sage green (accent color with character)
+- `#7A9A7A` - Light sage (hover states)
+- `#4A6A4A` - Dark sage (emphasis)
 - `#ac9c8d` - Warm taupe (secondary elements)
 - `#d1c7bd` - Rose beige (light backgrounds)
 - `#d9d9d9` - Pearl gray (separators)
@@ -54,8 +57,10 @@ public/
 - Variable transparency
 
 **Typography:**
-- Primary font: Inter or Outfit
-- Generous line-height (1.6-1.8)
+- Display font: Playfair Display (headings)
+- Body font: Space Grotesk (paragraphs)
+- Mono font: JetBrains Mono (code)
+- Generous line-height (1.7)
 
 ## Data Structure
 

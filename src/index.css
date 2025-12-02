@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+/* Polices avec du caractère */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
@@ -11,9 +12,15 @@
   --color-beige: #d1c7bd;
   --color-gris: #d9d9d9;
   --color-creme: #efe9e1;
+  /* Vert sauge - touche de couleur avec du caractère */
+  --color-sauge: #5B7B5B;
+  --color-sauge-light: #7A9A7A;
+  --color-sauge-dark: #4A6A4A;
 
-  /* Polices */
-  --font-sans: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+  /* Polices avec du caractère */
+  --font-sans: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   /* Ombres personnalisées */
   --shadow-glass: 0 8px 32px 0 rgba(50, 45, 41, 0.1);
@@ -51,6 +58,9 @@
   --beige: #d1c7bd;
   --gris: #d9d9d9;
   --creme: #efe9e1;
+  --sauge: #5B7B5B;
+  --sauge-light: #7A9A7A;
+  --sauge-dark: #4A6A4A;
 }
 
 /* Styles de base */
@@ -66,12 +76,25 @@ html {
 }
 
 body {
-  font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
   color: var(--charbon);
   background-color: var(--creme);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Titres avec la police display */
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* Code et éléments techniques */
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
 /* Sélection de texte personnalisée */

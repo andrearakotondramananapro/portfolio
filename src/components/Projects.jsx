@@ -100,25 +100,25 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-20 md:py-32 bg-creme overflow-hidden"
+      className="relative py-24 md:py-40 bg-creme overflow-hidden"
     >
-      {/* Décorations de fond */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-bordeaux/5 rounded-full blur-3xl" />
+      {/* Décorations de fond - avec touche de sauge */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-sauge/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-taupe/10 rounded-full blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Titre de section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-6">
             {t('projects.title')}
           </h2>
-          <p className="text-lg text-taupe mb-4">{t('projects.subtitle')}</p>
-          <div className="w-24 h-1 bg-bordeaux mx-auto rounded-full" />
+          <p className="text-lg text-taupe mb-6">{t('projects.subtitle')}</p>
+          <div className="w-24 h-1 bg-sauge mx-auto rounded-full" />
         </motion.div>
 
         {/* Filtres */}
@@ -126,15 +126,15 @@ function Projects() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-16"
         >
           {filters.map((filter) => (
             <motion.button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-5 py-2 rounded-full font-medium text-sm transition-all ${
+              className={`px-6 py-2.5 rounded-full font-medium text-sm transition-all ${
                 activeFilter === filter
-                  ? 'bg-bordeaux text-creme shadow-glow'
+                  ? 'bg-sauge text-creme shadow-glow-sauge'
                   : 'bg-beige/50 text-charbon hover:bg-beige'
               }`}
               whileHover={{ scale: 1.05 }}
@@ -145,7 +145,7 @@ function Projects() {
           ))}
 
           {/* Compteur */}
-          <span className="px-4 py-2 text-sm text-taupe">
+          <span className="px-4 py-2 text-sm text-taupe font-medium">
             {filteredProjects.length} projet{filteredProjects.length > 1 ? 's' : ''}
           </span>
         </motion.div>
@@ -153,7 +153,7 @@ function Projects() {
         {/* Grille de projets */}
         <motion.div
           ref={ref}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
@@ -167,7 +167,7 @@ function Projects() {
                 onClick={() => openModal(project)}
                 className="group cursor-pointer"
               >
-                <div className="relative bg-creme/90 backdrop-blur-sm rounded-2xl border border-gris/20 overflow-hidden shadow-glass hover:shadow-glass-lg transition-all">
+                <div className="relative bg-creme/90 backdrop-blur-sm rounded-2xl border border-gris/20 overflow-hidden shadow-glass hover:shadow-glass-lg hover:border-sauge/20 transition-all">
                   {/* Image du projet */}
                   <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-beige to-gris/30">
                     <div className="w-full h-full flex items-center justify-center">
@@ -187,19 +187,19 @@ function Projects() {
 
                     {/* Badge featured */}
                     {project.featured && (
-                      <div className="absolute top-3 right-3 px-3 py-1 bg-bordeaux text-creme text-xs font-medium rounded-full">
+                      <div className="absolute top-3 right-3 px-3 py-1 bg-sauge text-creme text-xs font-semibold rounded-full">
                         Featured
                       </div>
                     )}
                   </div>
 
                   {/* Contenu */}
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold text-charbon mb-2 group-hover:text-bordeaux transition-colors">
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold text-charbon mb-3 group-hover:text-sauge transition-colors">
                       {getLocalizedContent(project.title)}
                     </h3>
 
-                    <p className="text-charbon/70 text-sm mb-4 line-clamp-2">
+                    <p className="text-charbon/70 text-sm mb-5 line-clamp-2">
                       {getLocalizedContent(project.description)}
                     </p>
 
@@ -208,7 +208,7 @@ function Projects() {
                       {project.technologies.slice(0, 4).map((tech, index) => (
                         <span
                           key={index}
-                          className="px-2 py-1 bg-beige/50 text-charbon/80 text-xs rounded-md"
+                          className="px-2.5 py-1 bg-beige/50 text-charbon/80 text-xs rounded-md"
                         >
                           {tech}
                         </span>

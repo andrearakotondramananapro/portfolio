@@ -95,12 +95,12 @@ function Hero() {
 
       {/* Contenu principal */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
           {/* Photo de profil avec effet glassmorphism */}
           <motion.div
             variants={photoVariants}
@@ -124,16 +124,16 @@ function Hero() {
               />
             </div>
 
-            {/* Badge de disponibilité */}
+            {/* Badge de disponibilité - avec la couleur sauge */}
             <motion.div
-              className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-4 py-2 bg-creme/90 backdrop-blur-sm rounded-full shadow-glass border border-gris/20"
+              className="absolute -bottom-2 left-1/2 -translate-x-1/2 px-5 py-2.5 bg-creme/90 backdrop-blur-sm rounded-full shadow-glass border border-sauge/20"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-xs font-medium text-charbon">
+                <span className="w-2.5 h-2.5 bg-sauge rounded-full animate-pulse" />
+                <span className="text-xs font-semibold text-charbon tracking-wide">
                   {t('contact.info.availableNow')}
                 </span>
               </div>
@@ -145,7 +145,7 @@ function Hero() {
             {/* Salutation */}
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-taupe font-medium mb-2"
+              className="text-lg md:text-xl text-sauge font-medium mb-3 tracking-wide"
             >
               {t('hero.greeting')}
             </motion.p>
@@ -153,7 +153,7 @@ function Hero() {
             {/* Nom */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-charbon mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-charbon mb-5"
             >
               {profile.name}
             </motion.h1>
@@ -161,7 +161,7 @@ function Hero() {
             {/* Titre */}
             <motion.h2
               variants={itemVariants}
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold text-bordeaux mb-6"
+              className="text-2xl md:text-3xl lg:text-4xl font-semibold text-bordeaux mb-8"
             >
               {t('hero.title')}
             </motion.h2>
@@ -169,7 +169,7 @@ function Hero() {
             {/* Sous-titre */}
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-charbon/70 mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-charbon/70 mb-10 leading-relaxed"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -177,7 +177,7 @@ function Hero() {
             {/* Boutons CTA */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-8"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 mb-10"
             >
               <motion.a
                 href="#projects"

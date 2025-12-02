@@ -14,10 +14,16 @@ export default {
         beige: '#d1c7bd',
         gris: '#d9d9d9',
         creme: '#efe9e1',
+        // Vert sauge avec du caractère - s'harmonise avec la palette terre
+        sauge: '#5B7B5B',
+        'sauge-light': '#7A9A7A',
+        'sauge-dark': '#4A6A4A',
       },
-      // Polices modernes
+      // Polices avec du caractère
       fontFamily: {
-        sans: ['Inter', 'Outfit', 'system-ui', 'sans-serif'],
+        sans: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       // Animations personnalisées
       animation: {
@@ -70,6 +76,14 @@ export default {
         'glass-lg': '0 8px 32px 0 rgba(50, 45, 41, 0.2)',
         'glow': '0 0 20px rgba(114, 56, 61, 0.3)',
         'glow-lg': '0 0 40px rgba(114, 56, 61, 0.4)',
+        'glow-sauge': '0 0 20px rgba(91, 123, 91, 0.3)',
+      },
+      // Espacements personnalisés
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '26': '6.5rem',
+        '30': '7.5rem',
       },
     },
   },

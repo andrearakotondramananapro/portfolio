@@ -107,29 +107,29 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 md:py-32 bg-gradient-to-b from-creme to-beige/30 overflow-hidden"
+      className="relative py-24 md:py-40 bg-gradient-to-b from-creme to-beige/30 overflow-hidden"
     >
-      {/* Décorations de fond */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 bg-bordeaux/5 rounded-full blur-3xl" />
+      {/* Décorations de fond - avec touche de sauge */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-sauge/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-taupe/10 rounded-full blur-3xl" />
 
       <motion.div
         ref={ref}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
         variants={containerVariants}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
       >
         {/* Titre de section */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-4">
+        <motion.div variants={itemVariants} className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-6">
             {t('contact.title')}
           </h2>
-          <p className="text-lg text-taupe mb-4">{t('contact.subtitle')}</p>
-          <div className="w-24 h-1 bg-bordeaux mx-auto rounded-full" />
+          <p className="text-lg text-taupe mb-6">{t('contact.subtitle')}</p>
+          <div className="w-24 h-1 bg-sauge mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Colonne gauche - Formulaire */}
           <motion.div variants={itemVariants}>
             <div className="bg-creme/90 backdrop-blur-sm rounded-3xl border border-gris/20 p-8 shadow-glass">
@@ -140,8 +140,8 @@ function Contact() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="flex flex-col items-center justify-center py-12 text-center"
                 >
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  <div className="w-16 h-16 bg-sauge/10 rounded-full flex items-center justify-center mb-4">
+                    <CheckCircle className="w-8 h-8 text-sauge" />
                   </div>
                   <h3 className="text-xl font-bold text-charbon mb-2">
                     {t('contact.form.success')}
@@ -164,9 +164,9 @@ function Contact() {
                       onFocus={() => setFocusedField('name')}
                       onBlur={() => setFocusedField(null)}
                       required
-                      className={`w-full px-4 py-3 bg-beige/30 border-2 rounded-xl outline-none transition-all ${
+                      className={`w-full px-4 py-3.5 bg-beige/30 border-2 rounded-xl outline-none transition-all ${
                         focusedField === 'name'
-                          ? 'border-bordeaux bg-creme'
+                          ? 'border-sauge bg-creme'
                           : 'border-transparent hover:border-gris/30'
                       }`}
                     />
@@ -185,9 +185,9 @@ function Contact() {
                       onFocus={() => setFocusedField('email')}
                       onBlur={() => setFocusedField(null)}
                       required
-                      className={`w-full px-4 py-3 bg-beige/30 border-2 rounded-xl outline-none transition-all ${
+                      className={`w-full px-4 py-3.5 bg-beige/30 border-2 rounded-xl outline-none transition-all ${
                         focusedField === 'email'
-                          ? 'border-bordeaux bg-creme'
+                          ? 'border-sauge bg-creme'
                           : 'border-transparent hover:border-gris/30'
                       }`}
                     />
@@ -206,9 +206,9 @@ function Contact() {
                       onFocus={() => setFocusedField('subject')}
                       onBlur={() => setFocusedField(null)}
                       required
-                      className={`w-full px-4 py-3 bg-beige/30 border-2 rounded-xl outline-none transition-all ${
+                      className={`w-full px-4 py-3.5 bg-beige/30 border-2 rounded-xl outline-none transition-all ${
                         focusedField === 'subject'
-                          ? 'border-bordeaux bg-creme'
+                          ? 'border-sauge bg-creme'
                           : 'border-transparent hover:border-gris/30'
                       }`}
                     />
@@ -227,9 +227,9 @@ function Contact() {
                       onBlur={() => setFocusedField(null)}
                       required
                       rows={5}
-                      className={`w-full px-4 py-3 bg-beige/30 border-2 rounded-xl outline-none transition-all resize-none ${
+                      className={`w-full px-4 py-3.5 bg-beige/30 border-2 rounded-xl outline-none transition-all resize-none ${
                         focusedField === 'message'
-                          ? 'border-bordeaux bg-creme'
+                          ? 'border-sauge bg-creme'
                           : 'border-transparent hover:border-gris/30'
                       }`}
                     />
@@ -254,23 +254,23 @@ function Contact() {
           </motion.div>
 
           {/* Colonne droite - Informations */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-10">
             {/* Informations de contact */}
-            <div className="space-y-4">
+            <div className="space-y-5">
               {contactInfo.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-start space-x-4 p-4 bg-creme/80 backdrop-blur-sm rounded-xl border border-gris/20 shadow-glass"
+                  className="flex items-start space-x-5 p-5 bg-creme/80 backdrop-blur-sm rounded-xl border border-gris/20 shadow-glass hover:border-sauge/20 transition-all"
                   whileHover={{ x: 4 }}
                 >
                   <div
                     className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                      item.highlight ? 'bg-green-100' : 'bg-bordeaux/10'
+                      item.highlight ? 'bg-sauge/10' : 'bg-sauge/10'
                     }`}
                   >
                     <item.icon
                       className={`w-5 h-5 ${
-                        item.highlight ? 'text-green-600' : 'text-bordeaux'
+                        item.highlight ? 'text-sauge' : 'text-sauge'
                       }`}
                     />
                   </div>
@@ -279,14 +279,14 @@ function Contact() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-charbon font-medium hover:text-bordeaux transition-colors"
+                        className="text-charbon font-medium hover:text-sauge transition-colors"
                       >
                         {item.value}
                       </a>
                     ) : (
                       <p
                         className={`font-medium ${
-                          item.highlight ? 'text-green-600' : 'text-charbon'
+                          item.highlight ? 'text-sauge' : 'text-charbon'
                         }`}
                       >
                         {item.value}
@@ -299,17 +299,17 @@ function Contact() {
 
             {/* Réseaux sociaux */}
             <div className="bg-creme/80 backdrop-blur-sm rounded-xl border border-gris/20 p-6 shadow-glass">
-              <h3 className="text-lg font-semibold text-charbon mb-4">
+              <h3 className="text-lg font-semibold text-charbon mb-5">
                 Réseaux sociaux
               </h3>
-              <div className="flex space-x-3">
+              <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-beige/50 rounded-xl text-charbon hover:text-bordeaux hover:bg-beige transition-all"
+                    className="p-3.5 bg-beige/50 rounded-xl text-charbon hover:text-sauge hover:bg-sauge/10 transition-all"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.label}

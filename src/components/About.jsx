@@ -60,30 +60,30 @@ function About() {
   return (
     <section
       id="about"
-      className="relative py-20 md:py-32 bg-creme overflow-hidden"
+      className="relative py-24 md:py-40 bg-creme overflow-hidden"
     >
-      {/* Décorations de fond */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-bordeaux/5 rounded-full blur-3xl" />
+      {/* Décorations de fond - avec touche de sauge */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-sauge/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-taupe/10 rounded-full blur-3xl" />
 
       <motion.div
         ref={ref}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12"
         variants={containerVariants}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
       >
         {/* Titre de section */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-4">
+        <motion.div variants={itemVariants} className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-6">
             {t('about.title')}
           </h2>
-          <div className="w-24 h-1 bg-bordeaux mx-auto rounded-full" />
+          <div className="w-24 h-1 bg-sauge mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Colonne gauche - Image et valeurs */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-10">
             {/* Image avec effet glassmorphism */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-bordeaux/20 to-taupe/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-transform duration-500" />
@@ -109,16 +109,16 @@ function About() {
             {/* Valeurs */}
             <motion.div
               variants={itemVariants}
-              className="bg-creme/80 backdrop-blur-sm rounded-2xl p-6 border border-gris/20 shadow-glass"
+              className="bg-creme/80 backdrop-blur-sm rounded-2xl p-8 border border-gris/20 shadow-glass"
             >
-              <h3 className="text-lg font-semibold text-charbon mb-4">
+              <h3 className="text-lg font-semibold text-charbon mb-5">
                 {t('about.values.title')}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {t('about.values.items').map((value, index) => (
                   <motion.span
                     key={index}
-                    className="px-4 py-2 bg-beige/50 text-charbon rounded-lg text-sm font-medium"
+                    className="px-4 py-2.5 bg-beige/50 text-charbon rounded-lg text-sm font-medium hover:bg-sauge/10 hover:border-sauge/20 border border-transparent transition-all"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: 0.5 + index * 0.1 }}
@@ -131,7 +131,7 @@ function About() {
           </motion.div>
 
           {/* Colonne droite - Description et stats */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-10">
             {/* Description */}
             <div className="space-y-6">
               <p className="text-lg md:text-xl text-charbon/80 leading-relaxed">
@@ -144,14 +144,14 @@ function About() {
             </div>
 
             {/* Statistiques */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-5">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
-                  className="text-center p-4 bg-creme/80 backdrop-blur-sm rounded-xl border border-gris/20 shadow-glass group hover:shadow-glass-lg transition-shadow"
+                  className="text-center p-5 bg-creme/80 backdrop-blur-sm rounded-xl border border-gris/20 shadow-glass group hover:shadow-glass-lg hover:border-sauge/20 transition-all"
                   whileHover={{ y: -4 }}
                 >
-                  <stat.icon className="w-6 h-6 mx-auto mb-2 text-bordeaux" />
+                  <stat.icon className="w-6 h-6 mx-auto mb-3 text-sauge" />
                   <motion.p
                     className="text-2xl md:text-3xl font-bold text-charbon"
                     initial={{ opacity: 0 }}
@@ -160,7 +160,7 @@ function About() {
                   >
                     {stat.value}+
                   </motion.p>
-                  <p className="text-xs md:text-sm text-taupe mt-1">
+                  <p className="text-xs md:text-sm text-taupe mt-2">
                     {stat.label}
                   </p>
                 </motion.div>
