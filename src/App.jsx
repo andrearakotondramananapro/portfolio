@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './hooks/useLanguage';
 import Loader from './components/Loader';
 import AnimatedBackground from './components/AnimatedBackground';
@@ -16,14 +15,14 @@ import './index.css';
 
 /**
  * Composant principal de l'application
- * Portfolio moderne avec glassmorphism et animations fluides
+ * Portfolio moderne avec transitions CSS pures
  */
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   // Gestion du chargement initial
   useEffect(() => {
-    // Empêcher le scroll pendant le chargement
     if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -32,53 +31,52 @@ function App() {
   }, [isLoading]);
 
   const handleLoadingComplete = () => {
-    // Petit délai pour une transition plus fluide
+    setIsLoading(false);
+    // Petit délai pour laisser le loader disparaître
     setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
+      setShowContent(true);
+    }, 50);
   };
 
   return (
     <LanguageProvider>
       {/* Loader initial */}
-      <AnimatePresence mode="wait">
-        {isLoading && <Loader onLoadingComplete={handleLoadingComplete} />}
-      </AnimatePresence>
+      {isLoading && <Loader onLoadingComplete={handleLoadingComplete} />}
 
-      <div className="min-h-screen bg-creme font-sans antialiased relative">
-        {/* Fond animé */}
-        <AnimatedBackground />
+      {/* Contenu principal - transitions CSS pures */}
+      {!isLoading && (
+        <div
+          className={`min-h-screen bg-creme font-sans antialiased relative transition-opacity duration-700 ease-out ${
+            showContent ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {/* Fond animé */}
+          <AnimatedBackground />
 
-        {/* Navigation fixe */}
-        <Navigation />
+          {/* Navigation fixe */}
+          <div
+            className={`transition-all duration-700 ease-out delay-100 ${
+              showContent ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
+            }`}
+          >
+            <Navigation />
+          </div>
 
-        {/* Contenu principal - centré sur tous les écrans */}
-        <main className="relative z-10 mx-auto">
-          {/* Section Hero - Première impression */}
-          <Hero />
+          {/* Contenu principal */}
+          <main className="relative z-10 mx-auto">
+            <Hero />
+            <About />
+            <Education />
+            <Certifications />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
 
-          {/* Section À propos */}
-          <About />
-
-          {/* Section Formation */}
-          <Education />
-
-          {/* Section Certifications */}
-          <Certifications />
-
-          {/* Section Compétences */}
-          <Skills />
-
-          {/* Section Projets */}
-          <Projects />
-
-          {/* Section Contact */}
-          <Contact />
-        </main>
-
-        {/* Pied de page */}
-        <Footer />
-      </div>
+          {/* Pied de page */}
+          <Footer />
+        </div>
+      )}
     </LanguageProvider>
   );
 }

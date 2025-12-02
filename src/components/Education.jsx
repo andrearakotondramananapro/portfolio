@@ -77,13 +77,10 @@ function Education() {
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
         >
-          {/* Ligne verticale de la timeline */}
+          {/* Ligne verticale de la timeline - CSS transition */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gris md:-translate-x-1/2">
-            <motion.div
-              className="w-full bg-sauge origin-top"
-              initial={{ scaleY: 0 }}
-              animate={inView ? { scaleY: 1 } : {}}
-              transition={{ duration: 1.5, ease: 'easeOut' }}
+            <div
+              className={`w-full bg-sauge origin-top transition-transform duration-1000 ease-out ${inView ? 'scale-y-100' : 'scale-y-0'}`}
               style={{ height: '100%' }}
             />
           </div>

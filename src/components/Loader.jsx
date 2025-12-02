@@ -1,90 +1,89 @@
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 /**
  * Composant Loader
- * Animation de chargement élégante avec le thème du portfolio
+ * Animation de chargement avec CSS pur - zéro Framer Motion
  */
 function Loader({ onLoadingComplete }) {
+  const [progress, setProgress] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
+
+  useEffect(() => {
+    // Progression fluide avec requestAnimationFrame
+    const duration = 1800; // 1.8 secondes
+    const startTime = performance.now();
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const newProgress = Math.min((elapsed / duration) * 100, 100);
+
+      setProgress(newProgress);
+
+      if (newProgress < 100) {
+        requestAnimationFrame(animate);
+      } else {
+        // Démarrer l'animation de sortie
+        setTimeout(() => {
+          setIsExiting(true);
+          // Attendre la fin de l'animation de sortie
+          setTimeout(() => {
+            onLoadingComplete();
+          }, 500);
+        }, 100);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [onLoadingComplete]);
+
   return (
-    <motion.div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-creme"
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6, ease: 'easeInOut' }}
+    <div
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-creme transition-all duration-500 ease-out ${
+        isExiting ? 'opacity-0 scale-105' : 'opacity-100 scale-100'
+      }`}
     >
-      {/* Fond avec motif subtil */}
+      {/* Fond subtil statique */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-sauge/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-bordeaux/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-sauge/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-bordeaux/5 rounded-full blur-3xl" />
       </div>
 
       {/* Contenu du loader */}
-      <div className="relative z-10 flex flex-col items-center">
-        {/* Logo animé - Brackets de code */}
-        <motion.div
-          className="flex items-center gap-2 mb-8"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Bracket gauche */}
-          <motion.span
-            className="text-5xl md:text-6xl font-mono font-bold text-sauge"
-            animate={{ x: [-5, 0, -5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          >
+      <div
+        className={`relative z-10 flex flex-col items-center transition-all duration-500 ease-out ${
+          isExiting ? 'opacity-0 -translate-y-8' : 'opacity-100 translate-y-0'
+        }`}
+      >
+        {/* Logo - Brackets de code */}
+        <div className="flex items-center gap-3 mb-8">
+          <span className="text-5xl md:text-6xl font-mono font-bold text-sauge">
             {'<'}
-          </motion.span>
-
-          {/* Texte central */}
-          <motion.div
-            className="flex items-center"
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: 'auto', opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            <span className="text-3xl md:text-4xl font-display font-bold text-charbon">
-              Portfolio
-            </span>
-          </motion.div>
-
-          {/* Bracket droit avec slash */}
-          <motion.span
-            className="text-5xl md:text-6xl font-mono font-bold text-sauge"
-            animate={{ x: [5, 0, 5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          >
+          </span>
+          <span className="text-3xl md:text-4xl font-display font-bold text-charbon">
+            Portfolio
+          </span>
+          <span className="text-5xl md:text-6xl font-mono font-bold text-sauge">
             {'/>'}
-          </motion.span>
-        </motion.div>
+          </span>
+        </div>
 
-        {/* Barre de progression */}
-        <div className="w-48 md:w-64 h-1 bg-gris/30 rounded-full overflow-hidden">
-          <motion.div
-            className="h-full bg-gradient-to-r from-sauge via-bordeaux to-sauge rounded-full"
-            initial={{ width: '0%' }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 2, ease: 'easeInOut' }}
-            onAnimationComplete={onLoadingComplete}
+        {/* Barre de progression CSS */}
+        <div className="w-48 md:w-64 h-1.5 bg-gris/20 rounded-full overflow-hidden">
+          <div
+            className="h-full rounded-full transition-none"
+            style={{
+              width: `${progress}%`,
+              background: 'linear-gradient(90deg, #5B7B5B 0%, #72383d 50%, #5B7B5B 100%)',
+            }}
           />
         </div>
 
         {/* Texte de chargement */}
-        <motion.p
-          className="mt-4 text-sm text-taupe font-mono"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          <motion.span
-            animate={{ opacity: [1, 0.5, 1] }}
-            transition={{ duration: 1, repeat: Infinity }}
-          >
-            Chargement en cours...
-          </motion.span>
-        </motion.p>
+        <p className="mt-5 text-sm text-taupe font-mono tracking-wider">
+          Chargement...
+        </p>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

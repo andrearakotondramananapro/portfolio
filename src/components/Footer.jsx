@@ -116,18 +116,14 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bouton retour en haut */}
-      <motion.button
+      {/* Bouton retour en haut - transition CSS */}
+      <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 p-3 bg-bordeaux text-creme rounded-full shadow-glow hover:shadow-glow-lg transition-all z-40"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-6 right-6 p-3 bg-bordeaux text-creme rounded-full shadow-glow hover:shadow-glow-lg hover:scale-110 active:scale-95 transition-all duration-200 z-40"
         aria-label="Retour en haut"
       >
         <ArrowUp size={20} />
-      </motion.button>
+      </button>
 
       {/* Easter egg dans la console */}
       <script
