@@ -83,10 +83,10 @@ function Contact() {
           <div className="w-24 h-1 bg-corail mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Colonne gauche - Formulaire */}
           <div>
-            <div className="bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-8 shadow-glass">
+            <div className="bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-4 sm:p-6 md:p-8 shadow-glass">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="w-16 h-16 bg-corail/10 rounded-full flex items-center justify-center mb-4">
@@ -204,22 +204,22 @@ function Contact() {
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-start space-x-5 p-5 bg-blanc/80 backdrop-blur-sm rounded-xl border border-light-gray/20 shadow-glass hover:border-corail/20 hover:translate-x-1 transition-all duration-200"
+                  className="flex items-start space-x-3 sm:space-x-4 md:space-x-5 p-4 sm:p-5 bg-blanc/80 backdrop-blur-sm rounded-xl border border-light-gray/20 shadow-glass hover:border-corail/20 hover:translate-x-1 transition-all duration-200"
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-corail/10">
-                    <item.icon className="w-5 h-5 text-corail" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-corail/10 flex-shrink-0">
+                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-corail" />
                   </div>
-                  <div>
-                    <p className="text-sm text-gray">{item.label}</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs sm:text-sm text-gray">{item.label}</p>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-dark font-medium hover:text-corail transition-colors"
+                        className="text-dark font-medium hover:text-corail transition-colors break-words text-sm sm:text-base"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className={`font-medium ${item.highlight ? 'text-corail' : 'text-dark'}`}>
+                      <p className={`font-medium break-words text-sm sm:text-base ${item.highlight ? 'text-corail' : 'text-dark'}`}>
                         {item.value}
                       </p>
                     )}
@@ -229,42 +229,42 @@ function Contact() {
             </div>
 
             {/* Réseaux sociaux */}
-            <div className="bg-blanc/80 backdrop-blur-sm rounded-xl border border-light-gray/20 p-6 shadow-glass">
-              <h3 className="text-lg font-semibold text-dark mb-5">
+            <div className="bg-blanc/80 backdrop-blur-sm rounded-xl border border-light-gray/20 p-4 sm:p-5 md:p-6 shadow-glass">
+              <h3 className="text-base sm:text-lg font-semibold text-dark mb-4 sm:mb-5">
                 Réseaux sociaux
               </h3>
-              <div className="flex space-x-4">
+              <div className="flex space-x-3 sm:space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3.5 bg-light-gray/50 rounded-xl text-dark hover:text-corail hover:bg-corail/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+                    className="p-2.5 sm:p-3 md:p-3.5 bg-light-gray/50 rounded-xl text-dark hover:text-corail hover:bg-corail/10 hover:scale-110 hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
                     aria-label={social.label}
                   >
-                    <social.icon size={22} />
+                    <social.icon size={20} className="sm:w-[22px] sm:h-[22px]" />
                   </a>
                 ))}
               </div>
             </div>
 
             {/* CTA Final */}
-            <div className="relative p-8 bg-gradient-to-br from-rose to-dark rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-200">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+            <div className="relative p-5 sm:p-6 md:p-8 bg-gradient-to-br from-rose to-dark rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-200">
+              <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-20 h-20 sm:w-24 sm:h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
 
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-blanc mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold text-blanc mb-3 sm:mb-4">
                   {t('contact.cta')}
                 </h3>
-                <p className="text-blanc/80 mb-6">{t('contact.subtitle')}</p>
+                <p className="text-blanc/80 mb-4 sm:mb-6 text-sm sm:text-base">{t('contact.subtitle')}</p>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-flex items-center space-x-2 px-6 py-3 bg-blanc text-dark font-semibold rounded-xl hover:bg-light-gray transition-colors"
+                  className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-blanc text-dark font-semibold rounded-xl hover:bg-light-gray transition-colors text-sm sm:text-base break-all"
                 >
-                  <Mail size={18} />
-                  <span>{profile.email}</span>
+                  <Mail size={18} className="flex-shrink-0" />
+                  <span className="break-all">{profile.email}</span>
                 </a>
               </div>
             </div>
