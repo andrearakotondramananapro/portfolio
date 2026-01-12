@@ -109,7 +109,7 @@ function Loader({ onLoadingComplete }) {
                 phase === 'complete' ? 'text-corail' : 'text-gray/70'
               }`}
             >
-              {phase === 'complete' ? '✨' : `${Math.round(progress)}%`}
+              {`${Math.round(progress)}%`}
             </span>
           </div>
         </div>

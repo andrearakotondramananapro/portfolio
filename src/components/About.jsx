@@ -16,23 +16,23 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 md:py-40 bg-blanc overflow-hidden">
+    <section id="about" className="relative py-12 md:py-16 bg-blanc overflow-hidden">
       {/* Décorations de fond */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-corail/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('about.title')}
           </h2>
           <div className="w-24 h-1 bg-corail mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Colonne gauche - Image et valeurs */}
-          <div className="space-y-10">
+          <div className="space-y-4">
             {/* Image avec effet glassmorphism */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-rose/20 to-corail/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-transform duration-500" />
@@ -68,9 +68,9 @@ function About() {
           </div>
 
           {/* Colonne droite - Description et stats */}
-          <div className="space-y-10">
+          <div className="space-y-4">
             {/* Description */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <p className="text-lg md:text-xl text-dark/80 leading-relaxed">
                 {t('about.description')}
               </p>

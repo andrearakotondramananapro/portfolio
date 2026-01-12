@@ -12,7 +12,7 @@ function Certifications() {
   return (
     <section
       id="certifications"
-      className="relative py-24 md:py-40 bg-blanc overflow-hidden"
+      className="relative py-12 md:py-16 bg-blanc overflow-hidden"
     >
       {/* Décorations de fond */}
       <div className="absolute top-0 left-1/4 w-80 h-80 bg-corail/5 rounded-full blur-3xl" />
@@ -20,7 +20,7 @@ function Certifications() {
 
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('certifications.title')}
           </h2>

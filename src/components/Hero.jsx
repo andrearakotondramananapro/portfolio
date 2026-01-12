@@ -23,7 +23,7 @@ function Hero() {
 
       {/* Contenu principal - sans animations d'entrée */}
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16 py-24">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
           {/* Photo de profil */}
           <div className="relative group">
             {/* Halo de fond */}
@@ -73,7 +73,7 @@ function Hero() {
             </p>
 
             {/* Boutons CTA */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-5 mb-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-10">
               <a
                 href="#projects"
                 className="group relative px-8 py-4 bg-rose text-blanc font-semibold rounded-xl overflow-hidden shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"

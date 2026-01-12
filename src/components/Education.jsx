@@ -18,7 +18,7 @@ function Education() {
   return (
     <section
       id="education"
-      className="relative py-24 md:py-40 bg-gradient-to-b from-blanc to-light-gray/30 overflow-hidden"
+      className="relative py-12 md:py-16 bg-gradient-to-b from-blanc to-light-gray/30 overflow-hidden"
     >
       {/* Décorations de fond */}
       <div className="absolute top-1/4 right-0 w-72 h-72 bg-corail/5 rounded-full blur-3xl" />
@@ -26,7 +26,7 @@ function Education() {
 
       <div className="relative z-10 w-full max-w-6xl 3xl:max-w-7xl 4xl:max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('education.title')}
           </h2>
@@ -40,7 +40,7 @@ function Education() {
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-corail/30 md:-translate-x-1/2" />
 
           {/* Éléments de la timeline */}
-          <div className="space-y-16">
+          <div className="space-y-6">
             {educationData.map((item, index) => {
               const Icon = iconMap[item.icon] || GraduationCap;
               const isEven = index % 2 === 0;

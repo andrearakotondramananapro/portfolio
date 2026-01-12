@@ -71,7 +71,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-40 bg-gradient-to-b from-blanc to-light-gray/30 overflow-hidden"
+      className="relative py-12 md:py-16 bg-gradient-to-b from-blanc to-light-gray/30 overflow-hidden"
     >
       {/* Décorations de fond */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-corail/5 rounded-full blur-3xl" />
@@ -79,7 +79,7 @@ function Contact() {
 
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('contact.title')}
           </h2>
@@ -87,7 +87,7 @@ function Contact() {
           <div className="w-24 h-1 bg-corail mx-auto rounded-full" />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Colonne gauche - Formulaire */}
           <div>
             <div className="bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-8 shadow-glass">
@@ -102,7 +102,7 @@ function Contact() {
                   <p className="text-gray">{t('contact.form.successDesc')}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Nom */}
                   <div className="relative">
                     <label className="block text-sm font-medium text-dark mb-2">
@@ -202,9 +202,9 @@ function Contact() {
           </div>
 
           {/* Colonne droite - Informations */}
-          <div className="space-y-10">
+          <div className="space-y-4">
             {/* Informations de contact */}
-            <div className="space-y-5">
+            <div className="space-y-3">
               {contactInfo.map((item, index) => (
                 <div
                   key={index}

@@ -75,7 +75,7 @@ function Footer() {
               <h4 className="text-sm font-semibold text-blanc/80 uppercase tracking-wider mb-4">
                 Réseaux sociaux
               </h4>
-              <div className="flex space-x-3">
+              <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}

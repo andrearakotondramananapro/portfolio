@@ -62,7 +62,7 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-24 md:py-40 bg-blanc overflow-hidden"
+      className="relative py-12 md:py-16 bg-blanc overflow-hidden"
     >
       {/* Décorations de fond */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-corail/5 rounded-full blur-3xl" />
@@ -70,7 +70,7 @@ function Projects() {
 
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('projects.title')}
           </h2>
@@ -79,7 +79,7 @@ function Projects() {
         </div>
 
         {/* Filtres */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
+        <div className="flex flex-wrap justify-center gap-6 mb-8">
           {filters.map((filter) => (
             <button
               key={filter}
@@ -276,7 +276,7 @@ function Projects() {
               )}
 
               {/* Liens */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-6">
                 {selectedProject.liveUrl && (
                   <a
                     href={selectedProject.liveUrl}

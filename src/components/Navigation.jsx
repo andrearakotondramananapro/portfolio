@@ -10,6 +10,7 @@ import LanguageSwitch from './LanguageSwitch';
 function Navigation() {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Éléments de navigation
@@ -22,10 +23,19 @@ function Navigation() {
     { href: '#contact', label: t('nav.contact') },
   ];
 
-  // Détection du scroll
+  // Détection du scroll et calcul de la progression
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Calcul de la progression sur toute la page
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const maxScroll = documentHeight - windowHeight;
+      const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+
+      setScrollProgress(Math.min(progress, 100));
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -40,9 +50,8 @@ function Navigation() {
     <>
       {/* Barre de progression du scroll */}
       <div
-        className={`fixed top-0 left-0 right-0 h-1 bg-rose z-[60] origin-left transition-transform duration-300 ${
-          isScrolled ? 'scale-x-100' : 'scale-x-0'
-        }`}
+        className="fixed top-0 left-0 right-0 h-1 bg-rose z-60 origin-left transition-transform duration-150"
+        style={{ transform: `scaleX(${scrollProgress / 100})` }}
       />
 
       {/* Navigation principale */}
@@ -64,7 +73,7 @@ function Navigation() {
             </a>
 
             {/* Navigation Desktop */}
-            <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
+            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.href}
@@ -99,7 +108,7 @@ function Navigation() {
             isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="px-4 py-4 space-y-1">
+          <div className="px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.href}

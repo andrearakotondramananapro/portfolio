@@ -131,9 +131,11 @@
 }
 
 /* Styles de base */
-* {
-  margin: 0;
-  padding: 0;
+/* Note: Tailwind v4 inclut déjà Preflight (reset CSS moderne) */
+/* On garde seulement box-sizing pour compatibilité */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
