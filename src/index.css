@@ -140,8 +140,30 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Lenis gère le smooth scroll, donc on désactive le natif */
+  scroll-behavior: auto;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -152,6 +174,8 @@ body {
   background-color: var(--blanc);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Empêche le bounce sur mobile */
+  overscroll-behavior-y: none;
 }
 
 /* Titres avec la police display */

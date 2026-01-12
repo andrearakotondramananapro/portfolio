@@ -20,6 +20,9 @@ import './index.css';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
+  // Activation du smooth scroll avec Lenis (uniquement après le chargement)
+  const shouldInitLenis = !isLoading;
+
   useEffect(() => {
     if (isLoading) {
       document.body.style.overflow = 'hidden';
@@ -27,6 +30,43 @@ function App() {
       document.body.style.overflow = 'auto';
     }
   }, [isLoading]);
+
+  // Initialisation de Lenis après le loader
+  useEffect(() => {
+    if (!shouldInitLenis) return;
+
+    let lenis = null;
+    let rafId = null;
+
+    // Import dynamique pour ne charger Lenis qu'après le loader
+    import('lenis').then(({ default: Lenis }) => {
+      lenis = new Lenis({
+        duration: 1.2, // Durée de l'inertie
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Courbe naturelle
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true, // Smooth scroll à la molette
+        smoothTouch: false, // Natif sur mobile pour ne pas interférer
+        wheelMultiplier: 1, // Vitesse normale
+        touchMultiplier: 2,
+        infinite: false,
+        autoResize: true,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        rafId = requestAnimationFrame(raf);
+      }
+
+      rafId = requestAnimationFrame(raf);
+    });
+
+    // Nettoyage lors du démontage
+    return () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      if (lenis) lenis.destroy();
+    };
+  }, [shouldInitLenis]);
 
   return (
     <LanguageProvider>
