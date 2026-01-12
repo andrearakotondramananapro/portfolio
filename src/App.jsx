@@ -25,9 +25,14 @@ function App() {
 
   useEffect(() => {
     if (isLoading) {
+      // Empêcher le scroll et cacher la scrollbar
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = '0px'; // Éviter le décalage de layout
+      document.documentElement.style.overflow = 'hidden'; // Cache aussi sur html
     } else {
       document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '';
+      document.documentElement.style.overflow = 'auto';
     }
   }, [isLoading]);
 

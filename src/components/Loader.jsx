@@ -75,7 +75,7 @@ function Loader({ onLoadingComplete }) {
         }`}
       >
         {/* Logo élégant */}
-        <div className="mb-12">
+        <div className="mb-6">
           <div className="flex items-center gap-4">
             <span className="text-4xl md:text-5xl font-mono font-light text-corail/80">{'<'}</span>
             <div className="flex flex-col items-center">

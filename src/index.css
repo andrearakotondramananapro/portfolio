@@ -214,6 +214,21 @@ code, pre, .font-mono {
   background: var(--rose);
 }
 
+/* Cacher la scrollbar pendant le chargement */
+html[style*="overflow: hidden"],
+body[style*="overflow: hidden"] {
+  /* Webkit (Chrome, Safari, Edge) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+html[style*="overflow: hidden"]::-webkit-scrollbar,
+body[style*="overflow: hidden"]::-webkit-scrollbar {
+  display: none; /* Webkit */
+  width: 0;
+  height: 0;
+}
+
 /* Focus visible pour l'accessibilité */
 *:focus-visible {
   outline: 2px solid var(--rose);
