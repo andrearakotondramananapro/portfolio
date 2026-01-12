@@ -18,12 +18,8 @@ function Education() {
   return (
     <section
       id="education"
-      className="relative py-12 md:py-16 bg-gradient-to-b from-blanc to-light-gray/30 overflow-hidden"
+      className="relative py-12 md:py-16 overflow-hidden"
     >
-      {/* Décorations de fond */}
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-corail/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-gray/10 rounded-full blur-3xl" />
-
       <div className="relative z-10 w-full max-w-6xl 3xl:max-w-7xl 4xl:max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
         <div className="text-center mb-8">

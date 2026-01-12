@@ -16,11 +16,7 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative py-12 md:py-16 bg-blanc overflow-hidden">
-      {/* Décorations de fond */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-corail/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gray/10 rounded-full blur-3xl" />
-
+    <section id="about" className="relative py-12 md:py-16 overflow-hidden">
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
         <div className="text-center mb-8">

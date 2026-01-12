@@ -12,15 +12,8 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blanc via-light-gray/30 to-blanc"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Fond avec CSS pur - GPU accelerated */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-rose/5 blur-3xl bg-float-1" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gray/10 blur-3xl bg-float-2" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-rose/3 blur-3xl bg-float-3" />
-      </div>
-
       {/* Contenu principal - sans animations d'entrée */}
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16 py-24">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
