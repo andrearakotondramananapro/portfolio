@@ -40,7 +40,7 @@ function Navigation() {
     <>
       {/* Barre de progression du scroll */}
       <div
-        className={`fixed top-0 left-0 right-0 h-1 bg-bordeaux z-[60] origin-left transition-transform duration-300 ${
+        className={`fixed top-0 left-0 right-0 h-1 bg-rose z-[60] origin-left transition-transform duration-300 ${
           isScrolled ? 'scale-x-100' : 'scale-x-0'
         }`}
       />
@@ -49,7 +49,7 @@ function Navigation() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-creme/80 backdrop-blur-lg shadow-glass'
+            ? 'bg-blanc/80 backdrop-blur-lg shadow-glass'
             : 'bg-transparent'
         }`}
       >
@@ -58,7 +58,7 @@ function Navigation() {
             {/* Logo */}
             <a
               href="#"
-              className="text-xl md:text-2xl font-bold text-charbon hover:text-bordeaux hover:scale-105 active:scale-95 transition-all duration-200"
+              className="text-xl md:text-2xl font-bold text-dark hover:text-rose hover:scale-105 active:scale-95 transition-all duration-200"
             >
               Portfolio
             </a>
@@ -69,10 +69,10 @@ function Navigation() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative px-3 lg:px-4 py-2 text-sm lg:text-base text-charbon hover:text-bordeaux transition-colors group"
+                  className="relative px-3 lg:px-4 py-2 text-sm lg:text-base text-dark hover:text-rose transition-colors group"
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-bordeaux transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-rose transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
                 </a>
               ))}
 
@@ -84,7 +84,7 @@ function Navigation() {
               <LanguageSwitch />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 text-charbon hover:text-bordeaux active:scale-90 transition-all duration-200"
+                className="p-2 text-dark hover:text-rose active:scale-90 transition-all duration-200"
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -95,7 +95,7 @@ function Navigation() {
 
         {/* Menu Mobile */}
         <div
-          className={`md:hidden bg-creme/95 backdrop-blur-lg border-t border-gris/30 overflow-hidden transition-all duration-300 ${
+          className={`md:hidden bg-blanc/95 backdrop-blur-lg border-t border-light-gray/30 overflow-hidden transition-all duration-300 ${
             isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
@@ -105,7 +105,7 @@ function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={handleNavClick}
-                className="block px-4 py-3 text-charbon hover:text-bordeaux hover:bg-beige/50 rounded-lg transition-all duration-200"
+                className="block px-4 py-3 text-dark hover:text-rose hover:bg-light-gray/50 rounded-lg transition-all duration-200"
               >
                 {item.label}
               </a>

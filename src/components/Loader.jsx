@@ -45,7 +45,7 @@ function Loader({ onLoadingComplete }) {
           : 'opacity-100 duration-300'
       }`}
       style={{
-        background: 'linear-gradient(180deg, #efe9e1 0%, #f5f0ea 50%, #efe9e1 100%)',
+        background: 'linear-gradient(180deg, #ffffff 0%, #fff8f8 50%, #ffffff 100%)',
       }}
     >
       {/* Cercles décoratifs doux */}
@@ -55,7 +55,7 @@ function Loader({ onLoadingComplete }) {
             phase === 'fading' ? 'scale-150 opacity-0' : 'scale-100 opacity-100'
           }`}
           style={{
-            background: 'radial-gradient(circle, rgba(114, 56, 61, 0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(226, 60, 100, 0.08) 0%, transparent 70%)',
           }}
         />
         <div
@@ -63,7 +63,7 @@ function Loader({ onLoadingComplete }) {
             phase === 'fading' ? 'scale-150 opacity-0' : 'scale-100 opacity-100'
           }`}
           style={{
-            background: 'radial-gradient(circle, rgba(91, 123, 91, 0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255, 212, 100, 0.1) 0%, transparent 70%)',
           }}
         />
       </div>
@@ -77,27 +77,27 @@ function Loader({ onLoadingComplete }) {
         {/* Logo élégant */}
         <div className="mb-12">
           <div className="flex items-center gap-4">
-            <span className="text-4xl md:text-5xl font-mono font-light text-sauge/80">{'<'}</span>
+            <span className="text-4xl md:text-5xl font-mono font-light text-corail/80">{'<'}</span>
             <div className="flex flex-col items-center">
-              <span className="text-3xl md:text-4xl font-display font-medium text-charbon tracking-wide">
+              <span className="text-3xl md:text-4xl font-display font-medium text-dark tracking-wide">
                 Portfolio
               </span>
-              <span className="text-xs text-taupe/60 tracking-[0.3em] uppercase mt-1">
+              <span className="text-xs text-gray/60 tracking-[0.3em] uppercase mt-1">
                 Bienvenue
               </span>
             </div>
-            <span className="text-4xl md:text-5xl font-mono font-light text-sauge/80">{'/>'}</span>
+            <span className="text-4xl md:text-5xl font-mono font-light text-corail/80">{'/>'}</span>
           </div>
         </div>
 
         {/* Barre de progression fine et élégante */}
         <div className="w-64 md:w-80">
-          <div className="h-[2px] bg-taupe/20 rounded-full overflow-hidden">
+          <div className="h-[2px] bg-gray/20 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full"
               style={{
                 width: `${progress}%`,
-                background: 'linear-gradient(90deg, #ac9c8d 0%, #72383d 50%, #5B7B5B 100%)',
+                background: 'linear-gradient(90deg, #ffd464 0%, #e23c64 50%, #b0183d 100%)',
               }}
             />
           </div>
@@ -106,7 +106,7 @@ function Loader({ onLoadingComplete }) {
           <div className="flex justify-center mt-6">
             <span
               className={`text-sm font-light tracking-widest transition-all duration-500 ${
-                phase === 'complete' ? 'text-sauge' : 'text-taupe/70'
+                phase === 'complete' ? 'text-corail' : 'text-gray/70'
               }`}
             >
               {phase === 'complete' ? '✨' : `${Math.round(progress)}%`}
@@ -121,7 +121,7 @@ function Loader({ onLoadingComplete }) {
           phase === 'fading' ? 'opacity-0' : 'opacity-100'
         }`}
         style={{
-          background: 'linear-gradient(90deg, transparent 0%, #ac9c8d40 50%, transparent 100%)',
+          background: 'linear-gradient(90deg, transparent 0%, #e23c6440 50%, transparent 100%)',
         }}
       />
     </div>

@@ -19,33 +19,33 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-24 md:py-40 bg-gradient-to-b from-beige/30 to-creme overflow-hidden"
+      className="relative py-24 md:py-40 bg-gradient-to-b from-light-gray/30 to-blanc overflow-hidden"
     >
       {/* Décorations de fond */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-sauge/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-taupe/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-corail/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/3 left-0 w-80 h-80 bg-gray/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-charbon mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('skills.title')}
           </h2>
-          <p className="text-lg text-taupe mb-6 max-w-2xl mx-auto">{t('skills.subtitle')}</p>
-          <div className="w-24 h-1 bg-sauge mx-auto rounded-full" />
+          <p className="text-lg text-gray mb-6 max-w-2xl mx-auto">{t('skills.subtitle')}</p>
+          <div className="w-24 h-1 bg-corail mx-auto rounded-full" />
         </div>
 
         {/* Grille */}
         <div className="grid md:grid-cols-2 gap-8">
           {categories.map((category) => (
             <div key={category.key}>
-              <div className="group bg-creme/90 backdrop-blur-sm rounded-3xl border border-gris/20 p-8 shadow-glass hover:shadow-glass-lg transition-all h-full">
+              <div className="group bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-8 shadow-glass hover:shadow-glass-lg transition-all h-full">
                 {/* En-tête de catégorie */}
                 <div className="flex items-center justify-between mb-8">
-                  <h3 className="text-xl font-bold text-charbon group-hover:text-sauge transition-colors">
+                  <h3 className="text-xl font-bold text-dark group-hover:text-corail transition-colors">
                     {category.label}
                   </h3>
-                  <span className="text-sm text-taupe font-medium px-3 py-1 bg-beige/50 rounded-full">
+                  <span className="text-sm text-gray font-medium px-3 py-1 bg-light-gray/50 rounded-full">
                     {skillsData[category.key]?.length || 0} skills
                   </span>
                 </div>
@@ -58,28 +58,28 @@ function Skills() {
                     return (
                       <div
                         key={skill.name}
-                        className="group/skill flex flex-col items-center p-5 bg-beige/20 rounded-2xl hover:bg-beige/40 border border-transparent hover:border-sauge/20 hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+                        className="group/skill flex flex-col items-center p-5 bg-light-gray/20 rounded-2xl hover:bg-light-gray/40 border border-transparent hover:border-corail/20 hover:-translate-y-1 transition-all duration-200 cursor-pointer"
                       >
                         {/* Icône */}
-                        <div className="w-12 h-12 rounded-xl bg-charbon/5 flex items-center justify-center mb-3 transition-all group-hover/skill:bg-sauge/10 group-hover/skill:scale-110">
+                        <div className="w-12 h-12 rounded-xl bg-dark/5 flex items-center justify-center mb-3 transition-all group-hover/skill:bg-corail/10 group-hover/skill:scale-110">
                           {IconComponent ? (
-                            <IconComponent className="w-6 h-6 text-charbon/70 group-hover/skill:text-sauge transition-colors" />
+                            <IconComponent className="w-6 h-6 text-dark/70 group-hover/skill:text-corail transition-colors" />
                           ) : (
-                            <span className="text-lg font-bold text-charbon/50">
+                            <span className="text-lg font-bold text-dark/50">
                               {skill.name.substring(0, 2)}
                             </span>
                           )}
                         </div>
 
                         {/* Nom */}
-                        <span className="text-sm font-medium text-charbon text-center">
+                        <span className="text-sm font-medium text-dark text-center">
                           {skill.name}
                         </span>
 
                         {/* Indicateur de niveau */}
-                        <div className="w-full mt-3 h-1.5 bg-gris/20 rounded-full overflow-hidden">
+                        <div className="w-full mt-3 h-1.5 bg-light-gray/20 rounded-full overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-taupe group-hover/skill:bg-sauge transition-colors"
+                            className="h-full rounded-full bg-gray group-hover/skill:bg-corail transition-colors"
                             style={{ width: `${skill.level}%` }}
                           />
                         </div>

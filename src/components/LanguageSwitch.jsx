@@ -28,7 +28,7 @@ function LanguageSwitch() {
       {/* Bouton de déclenchement */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-beige/50 hover:bg-beige transition-colors text-charbon"
+        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-light-gray/50 hover:bg-light-gray transition-colors text-dark"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
@@ -60,7 +60,7 @@ function LanguageSwitch() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="absolute right-0 mt-2 w-44 rounded-xl bg-creme/95 backdrop-blur-lg shadow-glass-lg border border-gris/20 overflow-hidden z-50"
+              className="absolute right-0 mt-2 w-44 rounded-xl bg-blanc/95 backdrop-blur-lg shadow-glass-lg border border-light-gray/20 overflow-hidden z-50"
             >
               {supportedLanguages.map((lang) => (
                 <motion.button
@@ -68,8 +68,8 @@ function LanguageSwitch() {
                   onClick={() => handleLanguageChange(lang)}
                   className={`w-full flex items-center space-x-3 px-4 py-3 text-left transition-colors ${
                     language === lang
-                      ? 'bg-bordeaux/10 text-bordeaux'
-                      : 'text-charbon hover:bg-beige/50'
+                      ? 'bg-rose/10 text-rose'
+                      : 'text-dark hover:bg-light-gray/50'
                   }`}
                   whileHover={{ x: 4 }}
                 >
@@ -80,7 +80,7 @@ function LanguageSwitch() {
                   {language === lang && (
                     <motion.span
                       layoutId="activeLanguage"
-                      className="ml-auto w-2 h-2 rounded-full bg-bordeaux"
+                      className="ml-auto w-2 h-2 rounded-full bg-rose"
                     />
                   )}
                 </motion.button>

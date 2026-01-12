@@ -31,7 +31,7 @@ function App() {
   return (
     <LanguageProvider>
       {/* Contenu principal - toujours rendu */}
-      <div className="min-h-screen bg-creme font-sans antialiased relative">
+      <div className="min-h-screen bg-blanc font-sans antialiased relative">
         <AnimatedBackground />
         <Navigation />
         <main className="relative z-10 mx-auto">
