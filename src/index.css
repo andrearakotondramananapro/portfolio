@@ -87,14 +87,16 @@
 }
 
 .animate-modal-overlay {
-  animation: modalOverlay 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalOverlay 0.2s ease-out forwards;
+  will-change: opacity;
 }
 
 .animate-modal-content {
-  animation: modalContent 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: modalContent 0.2s ease-out forwards;
+  will-change: opacity, transform;
 }
 
-/* Keyframes pour les modals uniquement (fadeIn, fadeInUp, float, pulseSlow définis dans @theme) */
+/* Keyframes pour les modals - optimisés GPU */
 @keyframes modalOverlay {
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -103,11 +105,11 @@
 @keyframes modalContent {
   0% {
     opacity: 0;
-    transform: scale(0.95) translateY(10px);
+    transform: translateY(8px);
   }
   100% {
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateY(0);
   }
 }
 

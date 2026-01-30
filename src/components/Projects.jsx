@@ -162,12 +162,13 @@ function Projects() {
       {/* Modale de détail - rendu via portal pour échapper au stacking context */}
       {selectedProject && createPortal(
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-dark/80 backdrop-blur-sm opacity-0 animate-modal-overlay"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-dark/85 opacity-0 animate-modal-overlay"
           onClick={closeModal}
         >
           <div
-            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-blanc rounded-3xl shadow-2xl opacity-0 scale-95 animate-modal-content"
+            className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-blanc rounded-3xl shadow-2xl opacity-0 animate-modal-content"
             onClick={(e) => e.stopPropagation()}
+            data-lenis-prevent
           >
             {/* Bouton fermer */}
             <button
