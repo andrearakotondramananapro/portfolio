@@ -42,8 +42,19 @@ function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = () => {
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
     setIsMobileMenuOpen(false);
+
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
   };
 
   return (
@@ -78,7 +89,8 @@ function Navigation() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="relative px-3 lg:px-4 py-2 text-sm lg:text-base text-dark hover:text-rose transition-colors group"
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className="relative px-3 lg:px-4 py-2 text-sm lg:text-base text-dark hover:text-rose transition-colors group cursor-pointer"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-rose transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-200" />
@@ -113,8 +125,8 @@ function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={handleNavClick}
-                className="block px-4 py-3 text-dark hover:text-rose hover:bg-light-gray/50 rounded-lg transition-all duration-200"
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="block px-4 py-3 text-dark hover:text-rose hover:bg-light-gray/50 rounded-lg transition-all duration-200 cursor-pointer"
               >
                 {item.label}
               </a>

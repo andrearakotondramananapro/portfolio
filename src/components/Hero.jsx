@@ -9,6 +9,15 @@ import profile from '../data/profile.json';
 function Hero() {
   const { t } = useLanguage();
 
+  // Fonction pour le smooth scroll
+  const handleSmoothScroll = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -69,7 +78,8 @@ function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-10">
               <a
                 href="#projects"
-                className="group relative px-8 py-4 bg-rose text-blanc font-semibold rounded-xl overflow-hidden shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                onClick={(e) => handleSmoothScroll(e, 'projects')}
+                className="group relative px-8 py-4 bg-rose text-blanc font-semibold rounded-xl overflow-hidden shadow-glow hover:shadow-glow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
               >
                 <span className="relative z-10">{t('hero.cta')}</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -77,7 +87,8 @@ function Hero() {
 
               <a
                 href="#contact"
-                className="px-8 py-4 bg-blanc/80 backdrop-blur-sm text-dark font-semibold rounded-xl border-2 border-dark/10 hover:border-rose/30 hover:bg-blanc hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                onClick={(e) => handleSmoothScroll(e, 'contact')}
+                className="px-8 py-4 bg-blanc/80 backdrop-blur-sm text-dark font-semibold rounded-xl border-2 border-dark/10 hover:border-rose/30 hover:bg-blanc hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
               >
                 {t('hero.ctaContact')}
               </a>
@@ -109,7 +120,8 @@ function Hero() {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <a
           href="#about"
-          className="flex flex-col items-center text-dark/50 hover:text-rose transition-colors animate-float"
+          onClick={(e) => handleSmoothScroll(e, 'about')}
+          className="flex flex-col items-center text-dark/50 hover:text-rose transition-colors animate-float cursor-pointer"
         >
           <span className="text-sm mb-2 font-medium">Scroll</span>
           <ChevronDown size={24} />

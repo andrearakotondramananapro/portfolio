@@ -14,6 +14,16 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Fonction pour le smooth scroll vers les sections
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const socialLinks = [
     { icon: Github, href: profile.social.github, label: 'GitHub' },
     { icon: Linkedin, href: profile.social.linkedin, label: 'LinkedIn' },
@@ -61,7 +71,8 @@ function Footer() {
                   <li key={index}>
                     <a
                       href={link.href}
-                      className="text-blanc/60 hover:text-blanc hover:translate-x-1 transition-all duration-200 text-sm inline-block"
+                      onClick={(e) => handleSmoothScroll(e, link.href)}
+                      className="text-blanc/60 hover:text-blanc hover:translate-x-1 transition-all duration-200 text-sm inline-block cursor-pointer"
                     >
                       {link.label}
                     </a>
