@@ -110,7 +110,7 @@ function Contact() {
     >
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('contact.title')}
           </h2>
@@ -120,7 +120,7 @@ function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Colonne gauche - Formulaire */}
-          <div>
+          <div data-aos="fade-right" data-aos-delay="100">
             <div className="bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-4 sm:p-6 md:p-8 shadow-glass">
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
@@ -257,7 +257,7 @@ function Contact() {
           </div>
 
           {/* Colonne droite - Informations */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-left" data-aos-delay="200">
             {/* Informations de contact */}
             <div className="space-y-3">
               {contactInfo.map((item, index) => (

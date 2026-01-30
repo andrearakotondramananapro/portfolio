@@ -19,7 +19,7 @@ function About() {
     <section id="about" className="relative py-12 md:py-16 overflow-hidden">
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('about.title')}
           </h2>
@@ -28,7 +28,7 @@ function About() {
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Colonne gauche - Image et valeurs */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-right" data-aos-delay="100">
             {/* Image avec effet glassmorphism */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-rose/20 to-corail/20 rounded-3xl blur-xl transform group-hover:scale-105 transition-transform duration-500" />
@@ -64,7 +64,7 @@ function About() {
           </div>
 
           {/* Colonne droite - Description et stats */}
-          <div className="space-y-4">
+          <div className="space-y-4" data-aos="fade-left" data-aos-delay="200">
             {/* Description */}
             <div className="space-y-4">
               <p className="text-lg md:text-xl text-dark/80 leading-relaxed">

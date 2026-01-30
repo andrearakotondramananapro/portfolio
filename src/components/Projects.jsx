@@ -66,7 +66,7 @@ function Projects() {
     >
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('projects.title')}
           </h2>
@@ -96,11 +96,13 @@ function Projects() {
 
         {/* Grille de projets */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {filteredProjects.map((project, index) => (
             <div
               key={project.id}
               onClick={() => openModal(project)}
               className="group cursor-pointer"
+              data-aos="zoom-in"
+              data-aos-delay={index * 50}
             >
               <div className="relative bg-blanc/90 backdrop-blur-sm rounded-2xl border border-light-gray/20 overflow-hidden shadow-glass hover:shadow-glass-lg hover:border-corail/20 hover:-translate-y-1 transition-all duration-200">
                 {/* Image du projet */}

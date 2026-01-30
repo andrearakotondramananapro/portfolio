@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LanguageProvider } from './hooks/useLanguage';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Loader from './components/Loader';
 import AnimatedBackground from './components/AnimatedBackground';
 import Navigation from './components/Navigation';
@@ -33,6 +35,15 @@ function App() {
       document.body.style.overflow = 'auto';
       document.body.style.paddingRight = '';
       document.documentElement.style.overflow = 'auto';
+
+      // Initialiser AOS après le loader
+      AOS.init({
+        duration: 600,
+        easing: 'ease-out',
+        once: true,
+        offset: 50,
+        disable: 'mobile', // Désactiver sur mobile pour performance
+      });
     }
   }, [isLoading]);
 

@@ -22,7 +22,7 @@ function Education() {
     >
       <div className="relative z-10 w-full max-w-6xl 3xl:max-w-7xl 4xl:max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('education.title')}
           </h2>
@@ -60,6 +60,8 @@ function Education() {
                     className={`w-full md:w-[calc(50%-2rem)] ${
                       isEven ? 'md:pr-10 pl-14 md:pl-0' : 'md:pl-10 pl-14 md:pr-0'
                     }`}
+                    data-aos={isEven ? 'fade-right' : 'fade-left'}
+                    data-aos-delay={index * 100}
                   >
                     <div className="group bg-blanc/90 backdrop-blur-sm p-8 rounded-2xl border border-light-gray/20 shadow-glass hover:shadow-glass-lg hover:border-corail/20 hover:-translate-y-1 transition-all duration-200">
                       {/* Dates */}

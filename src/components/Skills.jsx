@@ -23,7 +23,7 @@ function Skills() {
     >
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('skills.title')}
           </h2>
@@ -33,8 +33,8 @@ function Skills() {
 
         {/* Grille */}
         <div className="grid md:grid-cols-2 gap-8">
-          {categories.map((category) => (
-            <div key={category.key}>
+          {categories.map((category, index) => (
+            <div key={category.key} data-aos="fade-up" data-aos-delay={index * 100}>
               <div className="group bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-8 shadow-glass hover:shadow-glass-lg transition-all h-full">
                 {/* En-tête de catégorie */}
                 <div className="flex items-center justify-between mb-8">

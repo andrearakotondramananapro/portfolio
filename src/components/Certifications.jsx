@@ -16,7 +16,7 @@ function Certifications() {
     >
       <div className="relative z-10 w-full max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto px-6 sm:px-8 lg:px-12 3xl:px-16">
         {/* Titre de section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6">
             {t('certifications.title')}
           </h2>
@@ -26,8 +26,8 @@ function Certifications() {
 
         {/* Grille de certifications */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certificationsData.map((cert) => (
-            <div key={cert.id} className="group relative">
+          {certificationsData.map((cert, index) => (
+            <div key={cert.id} className="group relative" data-aos="fade-up" data-aos-delay={index * 100}>
               <div className="relative bg-blanc/90 backdrop-blur-sm rounded-2xl border border-light-gray/20 overflow-hidden shadow-glass hover:shadow-glass-lg hover:border-corail/20 hover:-translate-y-1 transition-all duration-200">
                 {/* Effet shine au hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
