@@ -30,7 +30,7 @@ function Certifications() {
             <div key={cert.id} className="group relative">
               <div className="relative bg-blanc/90 backdrop-blur-sm rounded-2xl border border-light-gray/20 overflow-hidden shadow-glass hover:shadow-glass-lg hover:border-corail/20 hover:-translate-y-1 transition-all duration-200">
                 {/* Effet shine au hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
 
                 {/* En-tête avec logo */}
                 <div className="relative p-8 pb-5">
