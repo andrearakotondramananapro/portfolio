@@ -26,20 +26,55 @@ function Contact() {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [focusedField, setFocusedField] = useState(null);
+
+  // Clé d'accès Web3Forms - Remplacez par votre propre clé
+  const WEB3FORMS_ACCESS_KEY = '84cb5464-58de-420c-8cfd-5fa0fd00163e';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'Portfolio Contact Form',
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        setError(t('contact.form.error') || 'Une erreur est survenue. Veuillez réessayer.');
+      }
+    } catch {
+      setError(t('contact.form.error') || 'Une erreur est survenue. Veuillez réessayer.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const contactInfo = [
@@ -183,13 +218,37 @@ function Contact() {
                     />
                   </div>
 
+                  {/* Message d'erreur */}
+                  {error && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   {/* Bouton d'envoi */}
                   <button
                     type="submit"
-                    className="group relative w-full flex items-center justify-center space-x-2 px-6 py-4 bg-rose text-blanc font-semibold rounded-xl overflow-hidden shadow-glow hover:shadow-glow-lg hover:scale-[1.01] active:scale-[0.99] transition-all duration-200"
+                    disabled={isLoading}
+                    className={`group relative w-full flex items-center justify-center space-x-2 px-6 py-4 bg-rose text-blanc font-semibold rounded-xl overflow-hidden shadow-glow transition-all duration-200 ${
+                      isLoading
+                        ? 'opacity-70 cursor-not-allowed'
+                        : 'hover:shadow-glow-lg hover:scale-[1.01] active:scale-[0.99]'
+                    }`}
                   >
-                    <Send size={20} />
-                    <span>{t('contact.form.send')}</span>
+                    {isLoading ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                        </svg>
+                        <span>{t('contact.form.sending') || 'Envoi en cours...'}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        <span>{t('contact.form.send')}</span>
+                      </>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                   </button>
                 </form>

@@ -73,8 +73,10 @@
         "subject": "Sujet",
         "message": "Votre message",
         "send": "Envoyer le message",
+        "sending": "Envoi en cours...",
         "success": "Message envoyé avec succès !",
-        "successDesc": "Je vous répondrai dans les plus brefs délais."
+        "successDesc": "Je vous répondrai dans les plus brefs délais.",
+        "error": "Une erreur est survenue. Veuillez réessayer."
       },
       "info": {
         "email": "Email",
@@ -163,8 +165,10 @@
         "subject": "Subject",
         "message": "Your message",
         "send": "Send message",
+        "sending": "Sending...",
         "success": "Message sent successfully!",
-        "successDesc": "I will get back to you as soon as possible."
+        "successDesc": "I will get back to you as soon as possible.",
+        "error": "An error occurred. Please try again."
       },
       "info": {
         "email": "Email",
@@ -253,8 +257,10 @@
         "subject": "Lohahevitra",
         "message": "Ny hafatrao",
         "send": "Alefaso ny hafatra",
+        "sending": "Fandefasana...",
         "success": "Hafatra nalefa soa aman-tsara!",
-        "successDesc": "Hamaly anao haingana araka izay azo atao aho."
+        "successDesc": "Hamaly anao haingana araka izay azo atao aho.",
+        "error": "Nisy olana nitranga. Andramo indray azafady."
       },
       "info": {
         "email": "Mailaka",
