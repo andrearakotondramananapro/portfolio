@@ -121,7 +121,13 @@ function Contact() {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Colonne gauche - Formulaire */}
           <div data-aos="fade-right" data-aos-delay="100">
-            <div className="bg-blanc/90 backdrop-blur-sm rounded-3xl border border-light-gray/20 p-4 sm:p-6 md:p-8 shadow-glass">
+            <div className="bg-blanc rounded-3xl border border-light-gray/30 p-6 sm:p-8 shadow-lg">
+              {/* Titre du formulaire */}
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-dark mb-2">Envoyez-moi un message</h3>
+                <p className="text-sm text-gray">Je vous répondrai dans les plus brefs délais.</p>
+              </div>
+
               {isSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-12 text-center">
                   <div className="w-16 h-16 bg-corail/10 rounded-full flex items-center justify-center mb-4">
@@ -133,53 +139,58 @@ function Contact() {
                   <p className="text-gray">{t('contact.form.successDesc')}</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Nom */}
-                  <div className="relative">
-                    <label className="block text-sm font-medium text-dark mb-2">
-                      {t('contact.form.name')}
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('name')}
-                      onBlur={() => setFocusedField(null)}
-                      required
-                      className={`w-full px-4 py-3.5 bg-light-gray/30 border-2 rounded-xl outline-none transition-all duration-200 ${
-                        focusedField === 'name'
-                          ? 'border-corail bg-blanc'
-                          : 'border-transparent hover:border-light-gray/30'
-                      }`}
-                    />
-                  </div>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Nom et Email sur la même ligne */}
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {/* Nom */}
+                    <div className="relative">
+                      <label className="block text-sm font-semibold text-dark mb-2">
+                        {t('contact.form.name')} <span className="text-rose">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        onFocus={() => setFocusedField('name')}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder="John Doe"
+                        required
+                        className={`w-full px-4 py-3.5 bg-blanc rounded-xl transition-all duration-200 text-dark placeholder:text-gray/50 focus:outline-none ${
+                          focusedField === 'name'
+                            ? 'ring-1 ring-rose/60 shadow-sm shadow-rose/5'
+                            : 'border border-light-gray hover:border-gray/40'
+                        }`}
+                      />
+                    </div>
 
-                  {/* Email */}
-                  <div className="relative">
-                    <label className="block text-sm font-medium text-dark mb-2">
-                      {t('contact.form.email')}
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      onFocus={() => setFocusedField('email')}
-                      onBlur={() => setFocusedField(null)}
-                      required
-                      className={`w-full px-4 py-3.5 bg-light-gray/30 border-2 rounded-xl outline-none transition-all duration-200 ${
-                        focusedField === 'email'
-                          ? 'border-corail bg-blanc'
-                          : 'border-transparent hover:border-light-gray/30'
-                      }`}
-                    />
+                    {/* Email */}
+                    <div className="relative">
+                      <label className="block text-sm font-semibold text-dark mb-2">
+                        {t('contact.form.email')} <span className="text-rose">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onFocus={() => setFocusedField('email')}
+                        onBlur={() => setFocusedField(null)}
+                        placeholder="john@exemple.com"
+                        required
+                        className={`w-full px-4 py-3.5 bg-blanc rounded-xl transition-all duration-200 text-dark placeholder:text-gray/50 focus:outline-none ${
+                          focusedField === 'email'
+                            ? 'ring-1 ring-rose/60 shadow-sm shadow-rose/5'
+                            : 'border border-light-gray hover:border-gray/40'
+                        }`}
+                      />
+                    </div>
                   </div>
 
                   {/* Sujet */}
                   <div className="relative">
-                    <label className="block text-sm font-medium text-dark mb-2">
-                      {t('contact.form.subject')}
+                    <label className="block text-sm font-semibold text-dark mb-2">
+                      {t('contact.form.subject')} <span className="text-rose">*</span>
                     </label>
                     <input
                       type="text"
@@ -188,19 +199,20 @@ function Contact() {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('subject')}
                       onBlur={() => setFocusedField(null)}
+                      placeholder="Objet de votre message..."
                       required
-                      className={`w-full px-4 py-3.5 bg-light-gray/30 border-2 rounded-xl outline-none transition-all duration-200 ${
+                      className={`w-full px-4 py-3.5 bg-blanc rounded-xl transition-all duration-200 text-dark placeholder:text-gray/50 focus:outline-none ${
                         focusedField === 'subject'
-                          ? 'border-corail bg-blanc'
-                          : 'border-transparent hover:border-light-gray/30'
+                          ? 'ring-1 ring-rose/60 shadow-sm shadow-rose/5'
+                          : 'border border-light-gray hover:border-gray/40'
                       }`}
                     />
                   </div>
 
                   {/* Message */}
                   <div className="relative">
-                    <label className="block text-sm font-medium text-dark mb-2">
-                      {t('contact.form.message')}
+                    <label className="block text-sm font-semibold text-dark mb-2">
+                      {t('contact.form.message')} <span className="text-rose">*</span>
                     </label>
                     <textarea
                       name="message"
@@ -208,19 +220,23 @@ function Contact() {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('message')}
                       onBlur={() => setFocusedField(null)}
+                      placeholder="Décrivez votre projet ou votre demande..."
                       required
                       rows={5}
-                      className={`w-full px-4 py-3.5 bg-light-gray/30 border-2 rounded-xl outline-none transition-all duration-200 resize-none ${
+                      className={`w-full px-4 py-3.5 bg-blanc rounded-xl transition-all duration-200 resize-none text-dark placeholder:text-gray/50 focus:outline-none ${
                         focusedField === 'message'
-                          ? 'border-corail bg-blanc'
-                          : 'border-transparent hover:border-light-gray/30'
+                          ? 'ring-1 ring-rose/60 shadow-sm shadow-rose/5'
+                          : 'border border-light-gray hover:border-gray/40'
                       }`}
                     />
                   </div>
 
                   {/* Message d'erreur */}
                   {error && (
-                    <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                    <div className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+                      <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center shrink-0">
+                        <span className="text-red-500 font-bold text-xs">!</span>
+                      </div>
                       {error}
                     </div>
                   )}
